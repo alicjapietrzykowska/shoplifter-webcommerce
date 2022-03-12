@@ -1,0 +1,26 @@
+@import "variables";
+
+header {
+  height: $header-height;
+  width: 100%;
+  background: black;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.logo {
+  color: var(--bg-color-light);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.header__buttons button {
+  font-size: 0.75rem;
+  height: 100%;
+}

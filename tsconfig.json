@@ -2,7 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "src",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -21,7 +21,16 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@angular/*": ["../node_modules/@angular/*"],
+      "@components/*": ["app/_components/*"],
+      "@routes/*": ["app/routes/*"],
+      "@services/*": ["app/_services/*"],
+      "@env": ["environments/environment.ts"],
+      "@styles/*": ["app/_styles/*"],
+      "@modules/*": ["app/_modules/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

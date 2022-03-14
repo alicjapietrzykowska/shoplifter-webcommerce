@@ -1,15 +1,18 @@
 <header>
-  <div class="container">
-    <div class="logo">{{ appName }}</div>
-    <div class="header__buttons">
+  <div class="container top-bar">
+    <div class="logo">{{ "general.appName" | translate }}</div>
+    <div class="top-bar__buttons">
       <button mat-flat-button color="accent">
         <mat-icon>favorite</mat-icon>
-        Wishlist
+        {{ "general.wishlist" | translate }}
       </button>
-      <button mat-flat-button color="primary">Account</button>
+      <button mat-flat-button color="primary">
+        {{ "general.account" | translate }}
+      </button>
       <button mat-flat-button color="primary-dark">
         <mat-icon>shopping_cart</mat-icon>2 items | $3534
       </button>
     </div>
   </div>
+  <app-menu></app-menu>
 </header>

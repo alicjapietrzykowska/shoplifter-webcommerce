@@ -6,6 +6,19 @@ body {
   margin: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .container {
   max-width: $container-xl;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h4 {
+  text-transform: uppercase;
 }

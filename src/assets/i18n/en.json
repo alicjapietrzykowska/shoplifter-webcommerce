@@ -1,0 +1,10 @@
+{
+  "general": {
+    "appName": "shoplifter.",
+    "wishlist": "Wishlist",
+    "account": "Account"
+  },
+  "products": {
+    "collections": "Collections"
+  }
+}

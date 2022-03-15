@@ -10,6 +10,7 @@
 .collections {
   width: 480px;
   height: 100%;
+  padding: 0 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,6 +21,11 @@
   li {
     text-transform: capitalize;
     cursor: pointer;
+    transition: all 0.1s;
+
+    &:hover {
+      color: var(--primary);
+    }
 
     &:not(:last-child) {
       margin-bottom: 18px;

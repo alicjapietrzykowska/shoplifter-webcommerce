@@ -1,10 +1,13 @@
-<div class="dropmenu">
+<div class="dropmenu" *ngIf="productList.length">
   <div class="collections">
     <h4>{{ "products.collections" | translate }}</h4>
     <ul>
-      <li>Road Bikes (263)</li>
-      <li>Mountain Bikes (0)</li>
-      <li>BMX Bikes (23)</li>
+      <li
+        *ngFor="let product of productList"
+        (click)="goToProductDetails(product)"
+      >
+        {{ product.title }}
+      </li>
     </ul>
   </div>
   <div class="example-products"></div>

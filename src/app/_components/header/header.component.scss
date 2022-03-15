@@ -1,16 +1,15 @@
 @import "variables";
 
 header {
-  height: $header-height;
   width: 100%;
-  background: black;
 }
 
-.container {
-  height: 100%;
+.top-bar {
+  height: $header-height;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+  background: black;
 }
 
 .logo {

@@ -29,7 +29,8 @@
       "@services/*": ["app/_services/*"],
       "@env": ["environments/environment.ts"],
       "@styles/*": ["app/_styles/*"],
-      "@modules/*": ["app/_modules/*"]
+      "@modules/*": ["app/_modules/*"],
+      "@interfaces/*": ["app/_interfaces/*"]
     }
   },
   "angularCompilerOptions": {

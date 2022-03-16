@@ -7,6 +7,7 @@ import { MenuComponent } from '@components/menu/menu.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { DropmenuComponent } from '@components/dropmenu/dropmenu.component';
 import { ProductsService } from '@services/products.service';
+import { ProductOverviewComponent } from '@components/product-overview/product-overview.component';
 
 @NgModule({
   imports: [
@@ -23,8 +24,14 @@ import { ProductsService } from '@services/products.service';
     HeaderComponent,
     MenuComponent,
     TranslateModule,
+    ProductOverviewComponent,
   ],
-  declarations: [HeaderComponent, MenuComponent, DropmenuComponent],
+  declarations: [
+    HeaderComponent,
+    MenuComponent,
+    DropmenuComponent,
+    ProductOverviewComponent,
+  ],
   providers: [ProductsService],
 })
 export class SharedModule {

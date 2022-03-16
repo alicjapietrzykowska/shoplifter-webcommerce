@@ -24,7 +24,6 @@ export class ProductDetailsComponent implements OnInit {
       .pipe(take(1))
       .subscribe((res: Product) => {
         this.product = res;
-        console.log(this.product);
       });
   }
 

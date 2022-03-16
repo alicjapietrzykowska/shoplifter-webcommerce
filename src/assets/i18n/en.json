@@ -5,6 +5,8 @@
     "account": "Account"
   },
   "products": {
+    "addToCart": "Add to Cart",
+    "addToWishlist": "Add to Wishlist",
     "collections": "Collections"
   }
 }

@@ -9,7 +9,7 @@ import { MenuItem } from '@interfaces/menuItemsDto';
 import { ProductsService } from '@services/products.service';
 import { filter, Subscription, take } from 'rxjs';
 import { MenuService } from './menu.service';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -21,10 +21,10 @@ export class MenuComponent implements OnInit, OnDestroy {
   activeMenuItem: MenuItem | undefined;
   menus: MenuItem[] = [];
 
-  private routeObservable: Subscription | undefined;
+  private routeObservable$: Subscription | undefined;
 
-  @HostListener('document:click', ['$event'])
-  clickOutside(event: Event) {
+  @HostListener('document:mouseover', ['$event'])
+  moveOutside(event: Event) {
     if (!this.eRef.nativeElement.contains(event.target)) {
       this.resetMenu();
     }
@@ -76,18 +76,15 @@ export class MenuComponent implements OnInit, OnDestroy {
       //TODO: add redirect to url connected to the menu item
       return;
     }
-    if (menuItem.isActive && this.isDropmenuVisible) {
-      this.resetMenu();
-    } else {
-      this.isDropmenuVisible = true;
-      this.menus.forEach((menu) => (menu.isActive = false));
-      menuItem.isActive = true;
-    }
+
+    this.isDropmenuVisible = true;
+    this.menus.forEach((menu) => (menu.isActive = false));
+    menuItem.isActive = true;
     this.activeMenuItem = this.getActiveMenuItem();
   }
 
   closeDropdownOnRedirect() {
-    this.routeObservable = this.router.events
+    this.routeObservable$ = this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event) => {
         this.resetMenu();
@@ -100,6 +97,6 @@ export class MenuComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    if (this.routeObservable) this.routeObservable.unsubscribe();
+    if (this.routeObservable$) this.routeObservable$.unsubscribe();
   }
 }

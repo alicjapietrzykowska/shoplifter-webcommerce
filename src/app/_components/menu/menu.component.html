@@ -5,7 +5,7 @@
       *ngFor="let menuItem of menus"
       class="menu-btn"
       [ngClass]="{ active: menuItem.isActive }"
-      (click)="manageMenuItem(menuItem)"
+      (mouseover)="manageMenuItem(menuItem)"
     >
       {{ menuItem.title }}
       <mat-icon *ngIf="menuItem.hasDropmenu && !menuItem.isActive">

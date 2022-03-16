@@ -1,17 +1,35 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '@env';
-import { map, Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Product } from '@interfaces/productDto';
+import { LoaderService } from '@services/loader.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsService {
-  constructor(private http: HttpClient) {}
+  private _allProducts: BehaviorSubject<Product[]>;
+  constructor(private http: HttpClient, private loaderService: LoaderService) {
+    this._allProducts = new BehaviorSubject<Product[]>([]);
+  }
 
-  getAllProducts() {
-    return this.http.get(`${environment.APIUrl}/products`);
+  get allProducts(): Product[] {
+    return this._allProducts.value;
+  }
+
+  set allProducts(nextState: Product[]) {
+    this._allProducts.next(nextState);
+  }
+
+  getProducts(limit: number) {
+    this.loaderService.isLoading = true;
+    this.http
+      .get<Product[]>(`${environment.APIUrl}/products?limit=${limit}`)
+      .subscribe((res) => {
+        this.allProducts = res;
+        this.loaderService.isLoading = false;
+      });
   }
 
   getAllCategories(): Observable<string[]> {

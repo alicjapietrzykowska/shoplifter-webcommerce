@@ -10,5 +10,10 @@
       </li>
     </ul>
   </div>
-  <div class="example-products"></div>
+  <div class="example-products">
+    <app-product-overview
+      *ngFor="let product of randomProducts"
+      [product]="product"
+    ></app-product-overview>
+  </div>
 </div>

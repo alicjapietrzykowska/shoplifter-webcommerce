@@ -2,7 +2,8 @@
   "general": {
     "appName": "shoplifter.",
     "wishlist": "Wishlist",
-    "account": "Account"
+    "account": "Account",
+    "saleOffers": "Sale & Offers"
   },
   "products": {
     "addToCart": "Add to Cart",

@@ -10,6 +10,7 @@ import { ProductsService } from '@services/products.service';
 import { filter, Subscription, take } from 'rxjs';
 import { MenuService } from './menu.service';
 import { NavigationEnd, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-menu',
@@ -34,7 +35,8 @@ export class MenuComponent implements OnInit, OnDestroy {
     private eRef: ElementRef,
     private productsService: ProductsService,
     private menuService: MenuService,
-    private router: Router
+    private router: Router,
+    private translate: TranslateService
   ) {}
 
   resetMenu() {
@@ -46,7 +48,7 @@ export class MenuComponent implements OnInit, OnDestroy {
     const menuItemsFromAPI = this.menuService.generateMenuItems(categories);
     const staticMenuItems = [
       {
-        title: 'Sale/Offers',
+        title: this.translate.instant('general.saleOffers'),
         id: menuItemsFromAPI.length,
         isActive: false,
         hasDropmenu: false,
@@ -73,7 +75,6 @@ export class MenuComponent implements OnInit, OnDestroy {
     if (!menuItem.hasDropmenu) {
       this.resetMenu();
       menuItem.isActive = true;
-      //TODO: add redirect to url connected to the menu item
       return;
     }
 
@@ -81,6 +82,12 @@ export class MenuComponent implements OnInit, OnDestroy {
     this.menus.forEach((menu) => (menu.isActive = false));
     menuItem.isActive = true;
     this.activeMenuItem = this.getActiveMenuItem();
+  }
+
+  goToCategory(menuItem: MenuItem) {
+    this.router.navigate([`product-list`], {
+      queryParams: { category: menuItem.title },
+    });
   }
 
   closeDropdownOnRedirect() {

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '@env';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { Product } from '@interfaces/productDto';
 import { LoaderService } from '@services/loader.service';
 
@@ -20,6 +20,10 @@ export class ProductsService {
 
   set allProducts(nextState: Product[]) {
     this._allProducts.next(nextState);
+  }
+
+  get allProducts$(): Observable<Product[]> {
+    return this._allProducts.asObservable();
   }
 
   getProducts(limit: number) {

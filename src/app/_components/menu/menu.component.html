@@ -6,6 +6,7 @@
       class="menu-btn"
       [ngClass]="{ active: menuItem.isActive }"
       (mouseover)="manageMenuItem(menuItem)"
+      (click)="goToCategory(menuItem)"
     >
       {{ menuItem.title }}
       <mat-icon *ngIf="menuItem.hasDropmenu && !menuItem.isActive">

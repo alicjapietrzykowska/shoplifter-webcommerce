@@ -17,6 +17,13 @@ export const routes: Routes = [
             (m) => m.ProductDetailsModule
           ),
       },
+      {
+        path: 'product-list',
+        loadChildren: () =>
+          import('../routes/category/category.module').then(
+            (m) => m.CategoryModule
+          ),
+      },
     ],
   },
   // { path: '403', component: Page403Component },

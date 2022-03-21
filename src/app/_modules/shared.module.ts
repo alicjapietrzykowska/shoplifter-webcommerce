@@ -6,7 +6,6 @@ import { AngularMaterialModule } from '@modules/angular-material.module';
 import { MenuComponent } from '@components/menu/menu.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { DropmenuComponent } from '@components/dropmenu/dropmenu.component';
-import { ProductsService } from '@services/products.service';
 import { ProductOverviewComponent } from '@components/product-overview/product-overview.component';
 
 @NgModule({
@@ -25,6 +24,7 @@ import { ProductOverviewComponent } from '@components/product-overview/product-o
     MenuComponent,
     TranslateModule,
     ProductOverviewComponent,
+    AngularMaterialModule,
   ],
   declarations: [
     HeaderComponent,
@@ -32,7 +32,6 @@ import { ProductOverviewComponent } from '@components/product-overview/product-o
     DropmenuComponent,
     ProductOverviewComponent,
   ],
-  providers: [ProductsService],
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders<SharedModule> {

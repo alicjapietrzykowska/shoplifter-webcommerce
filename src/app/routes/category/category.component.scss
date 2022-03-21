@@ -1,0 +1,9 @@
+.category-list {
+  margin: 0 auto;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  grid-template-rows: repeat(auto-fill, 1fr);
+  column-gap: 10px;
+  row-gap: 10px;
+}

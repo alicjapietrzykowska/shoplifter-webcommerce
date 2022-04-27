@@ -33,14 +33,12 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit() {
     //TODO: remove 'Sale & Offers'
-    console.log(this.categoryName);
     if (
       !this.categoryName ||
       this.categoryName === this.translate.instant('general.saleOffers') ||
       this.categoryName === 'Sale & Offers'
     ) {
       this.products = [...this.productService.allProducts];
-      console.log(this.products);
     } else {
       this.getProductsInCategory();
     }

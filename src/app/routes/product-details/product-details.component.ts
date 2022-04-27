@@ -17,7 +17,6 @@ export class ProductDetailsComponent implements OnInit {
   ) {}
 
   getProductDetails() {
-    console.log('all products', this.productService.allProducts);
     const productId = this.activatedRoute.snapshot.params['id'];
     if (!productId) return;
     this.productService

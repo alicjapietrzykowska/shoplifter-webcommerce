@@ -10,7 +10,7 @@
       <img [src]="product.image" [alt]="product.title" />
     </div>
     <h5>{{ product.category }}</h5>
-    <h3>{{ product.title }}</h3>
+    <h2>{{ product.title }}</h2>
     <div>{{ product.price | currency }}</div>
     <div *ngIf="isHovered">
       <div>{{ product.rating }}</div>

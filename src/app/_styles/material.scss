@@ -1,8 +1,12 @@
 @use "@angular/material" as mat;
 @import "./variables.scss";
 
+//$subheading-1 = h3
+//$subheading-2 = h4
+
 $custom-typography: mat.define-typography-config(
   $font-family: $primary-font,
+  $title: mat.define-typography-level(0.875rem, 1, 600),
   $subheading-1: mat.define-typography-level(0.875rem, 1, 600),
 );
 

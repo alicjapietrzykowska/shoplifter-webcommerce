@@ -7,6 +7,7 @@ import { MenuComponent } from '@components/menu/menu.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { DropmenuComponent } from '@components/dropmenu/dropmenu.component';
 import { ProductOverviewComponent } from '@components/product-overview/product-overview.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { ProductOverviewComponent } from '@components/product-overview/product-o
     ReactiveFormsModule,
     AngularMaterialModule,
     TranslateModule,
+    RouterModule,
   ],
   exports: [
     CommonModule,

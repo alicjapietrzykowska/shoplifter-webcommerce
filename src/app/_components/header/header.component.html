@@ -1,0 +1,22 @@
+<header>
+  <div class="top-bar">
+    <div class="container">
+      <a routerLink="/" class="logo">
+        {{ "general.appName" | translate }}
+      </a>
+      <div class="top-bar__buttons">
+        <button mat-flat-button color="accent">
+          <mat-icon>favorite</mat-icon>
+          {{ "general.wishlist" | translate }}
+        </button>
+        <button mat-flat-button color="primary">
+          {{ "general.account" | translate }}
+        </button>
+        <button mat-flat-button color="primary-dark">
+          <mat-icon>shopping_cart</mat-icon>2 items | $3534
+        </button>
+      </div>
+    </div>
+  </div>
+  <app-menu></app-menu>
+</header>

@@ -1,0 +1,29 @@
+@import "variables";
+
+header {
+  width: 100%;
+}
+
+.top-bar {
+  background: black;
+}
+
+.container {
+  height: $header-height;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.logo {
+  color: var(--bg-color-light);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.top-bar__buttons button {
+  font-size: 0.75rem;
+  height: 100%;
+}

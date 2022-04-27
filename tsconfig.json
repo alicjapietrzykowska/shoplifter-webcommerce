@@ -1,0 +1,43 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "src",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2017",
+    "module": "es2020",
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "paths": {
+      "@angular/*": ["../node_modules/@angular/*"],
+      "@components/*": ["app/_components/*"],
+      "@routes/*": ["app/routes/*"],
+      "@services/*": ["app/_services/*"],
+      "@env": ["environments/environment.ts"],
+      "@styles/*": ["app/_styles/*"],
+      "@modules/*": ["app/_modules/*"],
+      "@interfaces/*": ["app/_interfaces/*"]
+    }
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictPropertyInitialization": false,
+    "strictTemplates": true
+  }
+}

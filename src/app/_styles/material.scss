@@ -1,0 +1,45 @@
+@use "@angular/material" as mat;
+@import "./variables.scss";
+
+//$subheading-1 = h3
+//$subheading-2 = h4
+
+$custom-typography: mat.define-typography-config(
+  $font-family: $primary-font,
+  $title: mat.define-typography-level(0.875rem, 1, 600),
+  $subheading-1: mat.define-typography-level(0.875rem, 1, 600),
+);
+
+@include mat.core($custom-typography);
+
+$shoplifter-primary: mat.define-palette(mat.$deep-orange-palette, 500);
+$shoplifter-accent: mat.define-palette(mat.$gray-palette, 800);
+$shoplifter-warn: mat.define-palette(mat.$red-palette);
+
+$shoplifter-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $shoplifter-primary,
+      accent: $shoplifter-accent,
+      warn: $shoplifter-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($shoplifter-theme);
+
+$primary: mat.get-color-from-palette($shoplifter-primary, "default");
+$primary-darker: mat.get-color-from-palette($shoplifter-primary, 800);
+$accent: mat.get-color-from-palette($shoplifter-accent, "default");
+$warn: mat.get-color-from-palette($shoplifter-warn, "A700");
+$border: mat.get-color-from-palette($shoplifter-accent, 300);
+
+:root {
+  --primary: #{$primary};
+  --primary-dark: #{$primary-darker};
+  --accent: #{$accent};
+  --warn: #{$warn};
+  --bg-color-light: #fff;
+  --bg-color-dark: #0101001;
+  --border-color: #{$border};
+}

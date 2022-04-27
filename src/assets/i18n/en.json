@@ -1,0 +1,13 @@
+{
+  "general": {
+    "appName": "shoplifter.",
+    "wishlist": "Wishlist",
+    "account": "Account",
+    "saleOffers": "Sale & Offers"
+  },
+  "products": {
+    "addToCart": "Add to Cart",
+    "addToWishlist": "Add to Wishlist",
+    "collections": "Collections"
+  }
+}

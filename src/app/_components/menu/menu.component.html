@@ -1,0 +1,29 @@
+<nav>
+  <div class="menu">
+    <button
+      mat-button
+      *ngFor="let menuItem of menus"
+      class="menu-btn"
+      [ngClass]="{ active: menuItem.isActive }"
+      (mouseover)="manageMenuItem(menuItem)"
+      (click)="goToCategory(menuItem)"
+    >
+      {{ menuItem.title }}
+      <mat-icon *ngIf="menuItem.hasDropmenu && !menuItem.isActive">
+        keyboard_arrow_down
+      </mat-icon>
+      <mat-icon *ngIf="menuItem.hasDropmenu && menuItem.isActive">
+        keyboard_arrow_up
+      </mat-icon>
+    </button>
+    <button
+      class="search-btn"
+      mat-icon-button
+      aria-label="Example icon button with a home icon"
+    >
+      <mat-icon>search</mat-icon>
+    </button>
+  </div>
+  <app-dropmenu *ngIf="isDropmenuVisible" [activeMenuItem]="activeMenuItem">
+  </app-dropmenu>
+</nav>

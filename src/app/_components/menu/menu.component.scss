@@ -1,0 +1,42 @@
+@import "variables";
+
+nav {
+  position: relative;
+}
+
+.menu {
+  height: $menu-height;
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+}
+
+.menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex: 1;
+
+  .mat-icon {
+    margin: unset;
+    font-size: 1.375rem;
+  }
+
+  &.active {
+    color: var(--primary);
+  }
+}
+
+.search-btn {
+  height: 100%;
+  width: 120px;
+  border-left: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  .mat-icon {
+    font-size: 1.7rem;
+    margin: 0;
+    width: 100%;
+  }
+}

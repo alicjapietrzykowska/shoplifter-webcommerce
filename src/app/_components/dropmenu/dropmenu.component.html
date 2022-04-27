@@ -1,0 +1,19 @@
+<div class="dropmenu" *ngIf="productList.length">
+  <div class="collections">
+    <h4>{{ "products.collections" | translate }}</h4>
+    <ul>
+      <li
+        *ngFor="let product of productList"
+        (click)="goToProductDetails(product)"
+      >
+        {{ product.title }}
+      </li>
+    </ul>
+  </div>
+  <div class="example-products">
+    <app-product-overview
+      *ngFor="let product of randomProducts"
+      [product]="product"
+    ></app-product-overview>
+  </div>
+</div>

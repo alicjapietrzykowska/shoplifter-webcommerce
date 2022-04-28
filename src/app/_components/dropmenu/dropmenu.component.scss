@@ -7,6 +7,7 @@
   padding: 50px 0;
   display: flex;
   z-index: 20000;
+  overflow: hidden;
 }
 
 .collections {
@@ -42,6 +43,6 @@
 
   & > * {
     flex: 1;
-    max-width: 300px;
+    max-width: 400px;
   }
 }

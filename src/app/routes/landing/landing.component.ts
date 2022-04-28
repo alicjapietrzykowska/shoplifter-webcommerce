@@ -37,7 +37,7 @@ export class LandingComponent implements OnInit {
         items: 4,
       },
     },
-    nav: true,
+    nav: false,
   };
 
   constructor(private productService: ProductsService) {}

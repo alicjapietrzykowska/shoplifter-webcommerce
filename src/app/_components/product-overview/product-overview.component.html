@@ -11,11 +11,7 @@
     </div>
     <h5>{{ product.category }}</h5>
     <h2>{{ product.title }}</h2>
-    <div>{{ product.price | currency }}</div>
-    <div *ngIf="isHovered">
-      <div>{{ product.rating }}</div>
-      <div>socials</div>
-    </div>
+    <div class="price">{{ product.price | currency }}</div>
   </div>
   <div class="add-buttons" *ngIf="isHovered">
     <button mat-flat-button color="primary">

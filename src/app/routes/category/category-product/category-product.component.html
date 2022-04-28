@@ -1,10 +1,4 @@
-<div
-  *ngIf="product"
-  class="product"
-  [ngClass]="{ 'product--hovered': isHovered }"
-  (mouseover)="isHovered = true"
-  (mouseleave)="isHovered = false"
->
+<div *ngIf="product" class="product">
   <div>
     <div class="product__image">
       <img [src]="product.image" [alt]="product.title" />
@@ -12,12 +6,10 @@
     <h5>{{ product.category }}</h5>
     <h3>{{ product.title }}</h3>
     <div>{{ product.price | currency }}</div>
-    <div *ngIf="isHovered">
-      <div>{{ product.rating }}</div>
-      <div>socials</div>
-    </div>
+    <div>{{ product.rating }}</div>
+    <div>socials</div>
   </div>
-  <div class="add-buttons" *ngIf="isHovered">
+  <div class="add-buttons">
     <button mat-flat-button color="primary">
       <mat-icon>favorite</mat-icon>
       {{ "products.addToWishlist" | translate }}

@@ -20,7 +20,6 @@ export class DropmenuComponent implements OnChanges {
   ) {}
 
   getProductsFromCategory() {
-    if (!this.activeMenuItem) return;
     this.productList = this.productsService.allProducts.filter(
       (product) => product.category === this.activeMenuItem?.title
     );

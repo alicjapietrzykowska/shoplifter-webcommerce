@@ -6,6 +6,7 @@ export interface Product {
   price: number;
   rating: Rating;
   title: string;
+  isFavorite?: boolean;
 }
 
 interface Rating {

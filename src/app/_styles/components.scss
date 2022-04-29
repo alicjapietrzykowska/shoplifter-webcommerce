@@ -12,8 +12,11 @@ button {
 
     .mat-icon {
       margin-right: 0.5rem;
-      margin-left: -17px;
+      margin-left: -0.5rem;
       font-size: 17px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }

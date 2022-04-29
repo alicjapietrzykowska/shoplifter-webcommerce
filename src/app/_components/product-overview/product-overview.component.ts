@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '@interfaces/productDto';
 import { Router } from '@angular/router';
-import { LocalStorageService } from '@services/localStorage.service';
 import { WishlistService } from '@services/wishlist.service';
 
 @Component({
@@ -15,7 +14,6 @@ export class ProductOverviewComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private localStorageService: LocalStorageService,
     private wishlistService: WishlistService
   ) {}
 
@@ -24,17 +22,17 @@ export class ProductOverviewComponent implements OnInit {
   }
 
   addToWishlist() {
-    const currentList = this.wishlistService.getFullWishlist();
-    this.wishlistService.updateWishList([...currentList, this.product]);
+    const currentList = this.wishlistService.wishlist;
+    this.wishlistService.wishlist = [...currentList, this.product];
     this.product.isFavorite = true;
   }
 
   removeFromWishlist() {
-    const currentList = this.wishlistService.getFullWishlist();
+    const currentList = this.wishlistService.wishlist;
     const listWithoutProduct = currentList.filter(
-      (wishProduct: Product) => wishProduct.id === this.product.id
+      (wishProduct: Product) => wishProduct.id !== this.product.id
     );
-    this.wishlistService.updateWishList(listWithoutProduct);
+    this.wishlistService.wishlist = listWithoutProduct;
     this.product.isFavorite = false;
   }
 

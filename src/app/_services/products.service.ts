@@ -32,7 +32,6 @@ export class ProductsService {
       .get<Product[]>(`${environment.APIUrl}/products?limit=${limit}`)
       .subscribe((res) => {
         this.allProducts = res;
-        console.log(this.allProducts);
         this.loaderService.isLoading = false;
       });
   }

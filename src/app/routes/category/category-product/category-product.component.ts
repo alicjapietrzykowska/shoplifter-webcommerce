@@ -7,7 +7,7 @@ import { Product } from '@interfaces/productDto';
   styleUrls: ['./category-product.component.scss'],
 })
 export class CategoryProductComponent {
-  @Input() product: Product | undefined;
+  @Input() product!: Product;
   isHovered = false;
 
   constructor() {}

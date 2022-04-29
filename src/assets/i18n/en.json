@@ -8,6 +8,7 @@
   "products": {
     "addToCart": "Add to Cart",
     "addToWishlist": "Add to Wishlist",
+    "removeFromWishlist": "Remove from Wishlist",
     "collections": "Collections"
   }
 }

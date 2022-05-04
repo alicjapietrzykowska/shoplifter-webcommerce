@@ -1,0 +1,16 @@
+<div class="cart">
+  <h2>{{ "general.yourCart" | translate }}</h2>
+  <div class="product-list">
+    <div *ngFor="let product of products">{{ product.title }}</div>
+    <div class="cart--empty" *ngIf="!products.length">
+      {{ "products.emptyCart" | translate }}
+    </div>
+  </div>
+  <div class="cart__total">
+    <div>{{ "general.totalCart" | translate }}</div>
+    <div class="cart__total-price">{{ cartTotal | currency }}</div>
+  </div>
+  <button mat-flat-button [disabled]="!products.length" color="primary">
+    {{ "general.checkout" | translate }}
+  </button>
+</div>

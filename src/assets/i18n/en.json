@@ -1,12 +1,20 @@
 {
+  "common": {
+"items": "items"
+  },
   "general": {
     "appName": "shoplifter.",
     "wishlist": "Wishlist",
     "account": "Account",
-    "saleOffers": "Sale & Offers"
+    "saleOffers": "Sale & Offers",
+    "yourCart": "Your Cart",
+    "checkout": "Checkout",
+    "totalCart": "Total cart"
   },
   "products": {
     "addToCart": "Add to Cart",
+    "removeFromCart": "Remove from Cart",
+    "emptyCart": "Your cart is empty. Add something to your cart to view it here.",
     "addToWishlist": "Add to Wishlist",
     "removeFromWishlist": "Remove from Wishlist",
     "collections": "Collections"

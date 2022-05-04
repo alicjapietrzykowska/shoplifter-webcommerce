@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '@interfaces/productDto';
 import { Router } from '@angular/router';
 import { WishlistService } from '@services/wishlist.service';
+import { CartService } from '@services/cart.service';
 
 @Component({
   selector: 'app-product-overview',
@@ -14,29 +15,36 @@ export class ProductOverviewComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private wishlistService: WishlistService
+    private wishlistService: WishlistService,
+    private cartService: CartService
   ) {}
 
   goToProductDetails() {
     this.router.navigate([`products/${this.product.id}`]);
   }
 
+  addToCart() {
+    this.cartService.addToCart(this.product);
+    this.product.isInCart = true;
+  }
+
+  removeFromCart() {
+    this.cartService.removeFromCart(this.product);
+    this.product.isInCart = false;
+  }
+
   addToWishlist() {
-    const currentList = this.wishlistService.wishlist;
-    this.wishlistService.wishlist = [...currentList, this.product];
+    this.wishlistService.addToWishList(this.product);
     this.product.isFavorite = true;
   }
 
   removeFromWishlist() {
-    const currentList = this.wishlistService.wishlist;
-    const listWithoutProduct = currentList.filter(
-      (wishProduct: Product) => wishProduct.id !== this.product.id
-    );
-    this.wishlistService.wishlist = listWithoutProduct;
+    this.wishlistService.removeFromWishList(this.product);
     this.product.isFavorite = false;
   }
 
   ngOnInit() {
     this.wishlistService.manageProduct(this.product);
+    this.cartService.manageProduct(this.product);
   }
 }

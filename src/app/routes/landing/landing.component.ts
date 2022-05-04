@@ -44,8 +44,8 @@ export class LandingComponent implements OnInit {
 
   ngOnInit(): void {
     //randomize products to get different categories products side by side
-    this.allProducts = [...this.productService.allProducts].sort(
-      () => 0.5 - Math.random()
-    );
+    this.productService.allProducts$.subscribe((products) => {
+      this.allProducts = [...products].sort(() => 0.5 - Math.random());
+    });
   }
 }

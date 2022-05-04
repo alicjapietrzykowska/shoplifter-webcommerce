@@ -8,6 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { DropmenuComponent } from '@components/dropmenu/dropmenu.component';
 import { ProductOverviewComponent } from '@components/product-overview/product-overview.component';
 import { RouterModule } from '@angular/router';
+import { CartComponent } from '@components/cart/cart.component';
 
 @NgModule({
   imports: [
@@ -27,12 +28,14 @@ import { RouterModule } from '@angular/router';
     TranslateModule,
     ProductOverviewComponent,
     AngularMaterialModule,
+    CartComponent,
   ],
   declarations: [
     HeaderComponent,
     MenuComponent,
     DropmenuComponent,
     ProductOverviewComponent,
+    CartComponent,
   ],
 })
 export class SharedModule {

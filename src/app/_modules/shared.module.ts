@@ -9,6 +9,7 @@ import { DropmenuComponent } from '@components/dropmenu/dropmenu.component';
 import { ProductOverviewComponent } from '@components/product-overview/product-overview.component';
 import { RouterModule } from '@angular/router';
 import { CartComponent } from '@components/cart/cart.component';
+import { CartProductComponent } from '@components/cart/cart-product/cart-product.component';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { CartComponent } from '@components/cart/cart.component';
     ProductOverviewComponent,
     AngularMaterialModule,
     CartComponent,
+    CartProductComponent,
   ],
   declarations: [
     HeaderComponent,
@@ -36,6 +38,7 @@ import { CartComponent } from '@components/cart/cart.component';
     DropmenuComponent,
     ProductOverviewComponent,
     CartComponent,
+    CartProductComponent,
   ],
 })
 export class SharedModule {

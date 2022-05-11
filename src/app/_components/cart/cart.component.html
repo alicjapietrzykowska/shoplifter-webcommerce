@@ -1,7 +1,10 @@
 <div class="cart">
   <h2>{{ "general.yourCart" | translate }}</h2>
   <div class="product-list">
-    <div *ngFor="let product of products">{{ product.title }}</div>
+    <app-cart-product
+      *ngFor="let product of products"
+      [product]="product"
+    ></app-cart-product>
     <div class="cart--empty" *ngIf="!products.length">
       {{ "products.emptyCart" | translate }}
     </div>

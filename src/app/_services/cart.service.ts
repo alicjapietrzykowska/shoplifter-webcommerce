@@ -38,14 +38,26 @@ export class CartService {
     this._cartTotal.next(newTotal);
   }
 
+  updateAmount(product: Product, amount: number) {
+    if (amount === 0) {
+      this.removeFromCart(product);
+      return;
+    }
+    this.cart = this.cart.map((cartProduct) =>
+      cartProduct.id === product.id ? { ...cartProduct, amount } : cartProduct
+    );
+  }
+
   addToCart(product: Product) {
+    product.amount = 1;
     this.cart = [...this.cart, product];
   }
 
   removeFromCart(product: Product) {
     this.cart = this.cart.filter(
-      (wishProduct: Product) => wishProduct.id !== product.id
+      (cartProduct: Product) => cartProduct.id !== product.id
     );
+    product.isInCart = false;
   }
 
   calculateCartTotal(cart: Product[]) {

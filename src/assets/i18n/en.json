@@ -12,7 +12,8 @@
     "saleOffers": "Sale & Offers",
     "yourCart": "Your Cart",
     "checkout": "Checkout",
-    "totalCart": "Total cart"
+    "totalCart": "Total cart",
+    "bestSellers": "Best Sellers from the last week"
   },
   "products": {
     "addToCart": "Add to Cart",
@@ -22,5 +23,8 @@
     "removeFromWishlist": "Remove from Wishlist",
     "collections": "Collections",
     "confirmDeleteFromCart": "Do you want to remove this product from the cart?"
+  },
+  "ads": {
+    "actionButton": "Check this out"
   }
 }

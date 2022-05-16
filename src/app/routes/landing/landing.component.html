@@ -1,9 +1,38 @@
-<div *ngIf="allProducts.length">
-  <owl-carousel-o [options]="customOptions">
-    <ng-container *ngFor="let product of allProducts">
-      <ng-template carouselSlide>
-        <app-product-overview [product]="product"></app-product-overview>
-      </ng-template>
-    </ng-container>
-  </owl-carousel-o>
+<div class="landing">
+  <div class="ads-wrapper">
+    <div
+      class="ad"
+      *ngFor="let ad of allAds; let index = index"
+      [ngClass]="'ad-' + (index + 1)"
+      (click)="redirect(ad.category)"
+    >
+      <div class="ad-info">
+        <h3>{{ ad.title }}</h3>
+        <button mat-button class="action-button">
+          {{ "ads.actionButton" | translate }}
+        </button>
+      </div>
+      <img [src]="ad.imageUrl" />
+    </div>
+  </div>
+
+  <div *ngIf="allProducts.length" class="carousel">
+    <h3>{{ "general.bestSellers" | translate }}</h3>
+    <owl-carousel-o [options]="customOptions">
+      <ng-container *ngFor="let product of allProducts">
+        <ng-template carouselSlide>
+          <app-product-overview [product]="product"></app-product-overview>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+  <div class="social-media-wrapper">
+    <div class="social-media">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="newsletter"></div>
+  </div>
 </div>

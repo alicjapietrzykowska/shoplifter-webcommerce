@@ -1,0 +1,14 @@
+<div class="confirm-modal header">
+  <h1 mat-dialog-title>{{ data.title }}</h1>
+</div>
+<div mat-dialog-content>
+  <p class="dialog-message">{{ data.message }}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-flat-button color="accent" (click)="cancel()">
+    {{ "common.cancel" | translate }}
+  </button>
+  <button mat-flat-button color="primary" (click)="confirm()">
+    {{ "common.ok" | translate }}
+  </button>
+</div>

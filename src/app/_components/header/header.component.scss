@@ -23,7 +23,17 @@ header {
   cursor: pointer;
 }
 
-.top-bar__buttons button {
-  font-size: 0.75rem;
-  height: 100%;
+.top-bar__buttons {
+  position: relative;
+  button {
+    font-size: 0.75rem;
+    height: 100%;
+  }
+}
+
+.cart-wrapper {
+  position: absolute;
+  right: 0;
+  top: $header-height;
+  z-index: 5000;
 }

@@ -26,8 +26,17 @@ export class WishlistService {
     return this._wishlist.asObservable();
   }
 
+  addToWishList(product: Product) {
+    this.wishlist = [...this.wishlist, product];
+  }
+
+  removeFromWishList(product: Product) {
+    this.wishlist = this.wishlist.filter(
+      (wishProduct: Product) => wishProduct.id !== product.id
+    );
+  }
+
   manageProduct(product: Product) {
-    const wishlist = this.localStorageService.get('wishlist') || [];
     product.isFavorite = this.wishlist.some(
       (wishProduct: Product) => wishProduct.id === product.id
     );

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '@env';
-import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { BehaviorSubject, finalize, Observable } from 'rxjs';
 import { Product } from '@interfaces/productDto';
 import { LoaderService } from '@services/loader.service';
 
@@ -41,9 +41,10 @@ export class ProductsService {
   }
 
   getProductsInCategory(category: string): Observable<Product[]> {
-    return this.http.get<Product[]>(
-      `${environment.APIUrl}/products/category/${category}`
-    );
+    this.loaderService.isLoading = true;
+    return this.http
+      .get<Product[]>(`${environment.APIUrl}/products/category/${category}`)
+      .pipe(finalize(() => (this.loaderService.isLoading = false)));
   }
 
   getProductDetails(id: number): Observable<Product> {

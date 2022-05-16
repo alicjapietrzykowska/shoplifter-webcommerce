@@ -27,14 +27,28 @@
       *ngIf="product.isFavorite"
       (click)="removeFromWishlist()"
       mat-flat-button
-      color="accent"
+      color="primary"
     >
       <mat-icon>favorite_border</mat-icon>
       {{ "products.removeFromWishlist" | translate }}
     </button>
-    <button mat-flat-button color="primary-dark">
+    <button
+      *ngIf="!product.isInCart"
+      (click)="addToCart()"
+      mat-flat-button
+      color="primary-dark"
+    >
       <mat-icon>shopping_cart</mat-icon>
       {{ "products.addToCart" | translate }}
+    </button>
+    <button
+      *ngIf="product.isInCart"
+      (click)="removeFromCart()"
+      mat-flat-button
+      color="primary-dark"
+    >
+      <mat-icon>remove_shopping_cart</mat-icon>
+      {{ "products.removeFromCart" | translate }}
     </button>
   </div>
 </div>

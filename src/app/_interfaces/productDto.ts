@@ -4,8 +4,10 @@ export interface Product {
   id: number;
   image: string;
   price: number;
+  amount: number;
   rating: Rating;
   title: string;
+  isInCart?: boolean;
   isFavorite?: boolean;
 }
 

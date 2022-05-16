@@ -8,6 +8,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { DropmenuComponent } from '@components/dropmenu/dropmenu.component';
 import { ProductOverviewComponent } from '@components/product-overview/product-overview.component';
 import { RouterModule } from '@angular/router';
+import { CartComponent } from '@components/cart/cart.component';
+import { CartProductComponent } from '@components/cart/cart-product/cart-product.component';
+import { ConfirmModalComponent } from '@components/confirm-modal/confirm-modal.component';
+import { ConfirmDialogService } from '@services/confirm-dialog.service';
 
 @NgModule({
   imports: [
@@ -27,13 +31,21 @@ import { RouterModule } from '@angular/router';
     TranslateModule,
     ProductOverviewComponent,
     AngularMaterialModule,
+    CartComponent,
+    CartProductComponent,
+    ConfirmModalComponent,
   ],
   declarations: [
     HeaderComponent,
     MenuComponent,
     DropmenuComponent,
     ProductOverviewComponent,
+    CartComponent,
+    CartProductComponent,
+    ConfirmModalComponent,
   ],
+  entryComponents: [ConfirmModalComponent],
+  providers: [ConfirmDialogService],
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders<SharedModule> {

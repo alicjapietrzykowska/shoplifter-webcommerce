@@ -26,6 +26,10 @@ export class MenuComponent implements OnInit, OnDestroy {
 
   @HostListener('document:mouseover', ['$event'])
   moveOutside(event: Event) {
+    //prevent from hiding menu when confirm-dialog open
+    if (document.querySelector('app-confirm-dialog')) {
+      return;
+    }
     if (!this.eRef.nativeElement.contains(event.target)) {
       this.resetMenu();
     }

@@ -13,7 +13,7 @@ import { LoaderService } from '@services/loader.service';
         mode="indeterminate"
       ></mat-progress-spinner>
     </div>
-    <app-layout *ngIf="!isAppLoading"></app-layout>
+    <app-layout></app-layout>
   `,
   styles: [
     `

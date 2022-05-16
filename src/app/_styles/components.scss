@@ -43,3 +43,7 @@ button {
 .mat-icon-button.mat-primary-dark {
   color: var(--primary-dark);
 }
+
+.cdk-overlay-container {
+  z-index: 6000;
+}

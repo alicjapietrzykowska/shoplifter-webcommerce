@@ -24,6 +24,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   @HostListener('document:click', ['$event'])
   clickOutside(event: Event) {
+    //prevent from hiding the cart when confirm dialog visible
+    if (document.querySelector('app-confirm-dialog')) {
+      return;
+    }
     if (!this.eRef.nativeElement.contains(event.target)) {
       this.showCart = false;
     }

@@ -1,6 +1,9 @@
 {
   "common": {
-"items": "items"
+    "items": "items",
+    "ok": "Ok",
+    "cancel": "Cancel",
+    "areYouSure": "Are you sure?"
   },
   "general": {
     "appName": "shoplifter.",
@@ -17,6 +20,7 @@
     "emptyCart": "Your cart is empty. Add something to your cart to view it here.",
     "addToWishlist": "Add to Wishlist",
     "removeFromWishlist": "Remove from Wishlist",
-    "collections": "Collections"
+    "collections": "Collections",
+    "confirmDeleteFromCart": "Do you want to remove this product from the cart?"
   }
 }

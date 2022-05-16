@@ -10,18 +10,22 @@
       </button>
     </div>
     <div class="product-cart__info-price">{{ product.price | currency }}</div>
-    <form>
-      <mat-form-field>
-        <input
-          matInput
-          type="number"
-          min="1"
-          id="myNumber"
-          [(ngModel)]="amount"
-          (ngModelChange)="updateAmount()"
-          [ngModelOptions]="{ standalone: true }"
-        />
-      </mat-form-field>
+    <form class="product-cart__amount">
+      <button
+        [disabled]="amount === 1"
+        type="button"
+        (click)="manageAmount($event, -1)"
+      >
+        -
+      </button>
+      <input
+        type="number"
+        min="1"
+        [(ngModel)]="amount"
+        (ngModelChange)="updateAmount()"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      <button type="button" (click)="manageAmount($event, 1)">+</button>
     </form>
   </div>
 </div>

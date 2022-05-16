@@ -10,6 +10,8 @@ import { ProductOverviewComponent } from '@components/product-overview/product-o
 import { RouterModule } from '@angular/router';
 import { CartComponent } from '@components/cart/cart.component';
 import { CartProductComponent } from '@components/cart/cart-product/cart-product.component';
+import { ConfirmModalComponent } from '@components/confirm-modal/confirm-modal.component';
+import { ConfirmDialogService } from '@services/confirm-dialog.service';
 
 @NgModule({
   imports: [
@@ -31,6 +33,7 @@ import { CartProductComponent } from '@components/cart/cart-product/cart-product
     AngularMaterialModule,
     CartComponent,
     CartProductComponent,
+    ConfirmModalComponent,
   ],
   declarations: [
     HeaderComponent,
@@ -39,7 +42,10 @@ import { CartProductComponent } from '@components/cart/cart-product/cart-product
     ProductOverviewComponent,
     CartComponent,
     CartProductComponent,
+    ConfirmModalComponent,
   ],
+  entryComponents: [ConfirmModalComponent],
+  providers: [ConfirmDialogService],
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders<SharedModule> {

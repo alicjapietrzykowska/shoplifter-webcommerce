@@ -28,11 +28,49 @@
   </div>
   <div class="social-media-wrapper">
     <div class="social-media">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <a href="https://twitter.com/" target="_blank">
+        <img
+          src="assets/images/twitter.png"
+          [alt]="'socialMedia.twitter' | translate"
+        />
+        <h5>{{ "socialMedia.followUs" | translate }}</h5>
+        <h4>{{ "socialMedia.twitter" | translate }}</h4>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank">
+        <img
+          src="assets/images/instagram.png"
+          [alt]="'socialMedia.instagram' | translate"
+        />
+        <h5>{{ "socialMedia.checkInspirations" | translate }}</h5>
+        <h4>{{ "socialMedia.instagram" | translate }}</h4>
+      </a>
+      <a href="https://www.facebook.com/" target="_blank">
+        <img
+          src="assets/images/fb.png"
+          [alt]="'socialMedia.facebook' | translate"
+        />
+        <h5>{{ "socialMedia.likeUsOn" | translate }}</h5>
+        <h4>{{ "socialMedia.facebook" | translate }}</h4>
+      </a>
+      <a href="https://pinterest.com/" target="_blank">
+        <img
+          src="assets/images/pinterest.png"
+          [alt]="'socialMedia.pinterest' | translate"
+        />
+        <h5>{{ "socialMedia.checkOurBoard" | translate }}</h5>
+        <h4>{{ "socialMedia.pinterest" | translate }}</h4>
+      </a>
     </div>
-    <div class="newsletter"></div>
+    <div class="newsletter">
+      <img src="assets/images/envelope.png" />
+      <h2>{{ "socialMedia.newsletter" | translate }}</h2>
+      <h5>{{ "socialMedia.newsletterDesc" | translate }}</h5>
+      <div class="input-wrapper">
+        <input type="text" placeholder="email" />
+        <button mat-flat-button color="primary">
+          {{ "socialMedia.subscribe" | translate }}
+        </button>
+      </div>
+    </div>
   </div>
 </div>

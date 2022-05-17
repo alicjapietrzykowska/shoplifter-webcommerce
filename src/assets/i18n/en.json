@@ -26,5 +26,18 @@
   },
   "ads": {
     "actionButton": "Check this out"
+  },
+  "socialMedia": {
+    "followUs": "Follow us on",
+    "twitter": "Twitter",
+    "checkInspirations": "Check inspirations on",
+    "instagram": "Instagram",
+    "likeUsOn": "Like us on",
+    "facebook": "Facebook",
+    "checkOurBoard": "Check our board on",
+    "pinterest": "Pinterest",
+    "newsletter": "Newsletter",
+    "newsletterDesc": "If you would like to receive the very latest updates on Shoplifter, new collections, behind-the-scenes image sand interviews, please click subscribe.",
+    "subscribe": "Subscribe"
   }
 }

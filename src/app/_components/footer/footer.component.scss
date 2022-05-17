@@ -3,11 +3,13 @@
 footer {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: baseline;
   height: $footer-height;
+  padding-top: 70px;
 
   & > div {
     text-align: center;
+    flex: 1;
   }
 
   h3 {

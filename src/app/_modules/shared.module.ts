@@ -12,6 +12,7 @@ import { CartComponent } from '@components/cart/cart.component';
 import { CartProductComponent } from '@components/cart/cart-product/cart-product.component';
 import { ConfirmModalComponent } from '@components/confirm-modal/confirm-modal.component';
 import { ConfirmDialogService } from '@services/confirm-dialog.service';
+import { FooterComponent } from '@components/footer/footer.component';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import { ConfirmDialogService } from '@services/confirm-dialog.service';
     FormsModule,
     ReactiveFormsModule,
     HeaderComponent,
+    FooterComponent,
     MenuComponent,
     TranslateModule,
     ProductOverviewComponent,
@@ -37,6 +39,7 @@ import { ConfirmDialogService } from '@services/confirm-dialog.service';
   ],
   declarations: [
     HeaderComponent,
+    FooterComponent,
     MenuComponent,
     DropmenuComponent,
     ProductOverviewComponent,

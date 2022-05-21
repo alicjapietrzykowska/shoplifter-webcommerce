@@ -47,3 +47,9 @@ button {
 .cdk-overlay-container {
   z-index: 6000;
 }
+
+.owl-carousel .owl-stage-outer {
+  overflow-y: visible;
+  overflow-x: hidden;
+  overflow: unset;
+}

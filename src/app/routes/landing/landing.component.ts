@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '@interfaces/productDto';
 import { ProductsService } from '@services/products.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { TranslateService } from '@ngx-translate/core';
+import { adsData } from 'assets/static/ads.static';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
@@ -10,6 +13,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class LandingComponent implements OnInit {
   allProducts: Product[] = [];
+  allAds = adsData;
 
   customOptions: OwlOptions = {
     loop: true,
@@ -18,7 +22,7 @@ export class LandingComponent implements OnInit {
     pullDrag: true,
     dots: false,
     navSpeed: 700,
-    autoplay: false,
+    autoplay: true,
     autoplayTimeout: 4000,
     autoplayHoverPause: true,
     autoplaySpeed: 1000,
@@ -40,7 +44,17 @@ export class LandingComponent implements OnInit {
     nav: false,
   };
 
-  constructor(private productService: ProductsService) {}
+  constructor(
+    private productService: ProductsService,
+    private translate: TranslateService,
+    private router: Router
+  ) {}
+
+  redirect(category: string) {
+    this.router.navigate([`product-list`], {
+      queryParams: { category },
+    });
+  }
 
   ngOnInit(): void {
     //randomize products to get different categories products side by side

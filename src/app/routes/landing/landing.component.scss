@@ -1,0 +1,227 @@
+@import "variables";
+
+.landing {
+  overflow: hidden;
+}
+.ads-wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  height: 900px;
+
+  .ad {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+    .ad-info {
+      position: absolute;
+      text-align: center;
+      z-index: 100;
+      max-width: 35%;
+    }
+
+    h3 {
+      text-transform: uppercase;
+      font-size: 1.5rem;
+    }
+
+    img {
+      object-fit: contain;
+      max-height: 100%;
+      // display: none;
+    }
+
+    .action-button {
+      border: 0;
+      border-top: 1px solid var(--accent);
+      border-bottom: 1px solid var(--accent);
+      background: 0;
+      text-transform: lowercase;
+      font-style: italic;
+      font-weight: 500;
+      padding: 1rem 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    &-1 {
+      grid-area: 1 / 1 / 5 / 6;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+
+      .ad-info {
+        left: 50%;
+        transform: translate(-50%);
+        top: 15%;
+      }
+
+      img {
+        width: 65%;
+        transform: scaleX(-1);
+      }
+    }
+
+    &-2 {
+      background-color: black;
+      color: white;
+      grid-area: 1 / 6 / 4 / 13;
+
+      .ad-info {
+        max-width: 40%;
+        left: 50%;
+        top: 30%;
+      }
+      img {
+        margin-left: 2rem;
+      }
+    }
+
+    &-3 {
+      grid-area: 5 / 1 / 7 / 6;
+      background-color: black;
+      color: white;
+      justify-content: flex-start;
+      .ad-info {
+        left: 50%;
+        top: 20%;
+      }
+      img {
+        filter: grayscale(1);
+        height: 80%;
+        margin-left: 30px;
+      }
+    }
+
+    &-4 {
+      grid-area: 4 / 6 / 7 / 13;
+      justify-content: flex-end;
+      .ad-info {
+        left: 10%;
+        top: 30%;
+      }
+      img {
+        margin-right: 150px;
+        height: 85%;
+      }
+    }
+  }
+}
+
+.carousel {
+  h3 {
+    text-transform: uppercase;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.85rem 0;
+    margin-bottom: 1rem;
+  }
+  margin-bottom: 2.5rem;
+}
+
+.social-media-wrapper {
+  height: 460px;
+  display: flex;
+  color: white;
+
+  & > div {
+    flex: 1;
+  }
+
+  .social-media {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    background: var(--primary);
+
+    & > a:nth-child(2),
+    & > a:nth-child(3) {
+      background: var(--primary-dark);
+    }
+
+    & > a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+
+      img {
+        margin-bottom: 1rem;
+      }
+
+      h5 {
+        font-style: italic;
+        font-size: 0.875rem;
+        margin-bottom: 0.2rem;
+        font-family: $secondary-font;
+      }
+
+      h4 {
+        text-transform: unset;
+        font-size: 1.125rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .newsletter {
+    background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      padding-bottom: 1.5rem;
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "";
+        width: 60px;
+        height: 1px;
+        border-bottom: 1px solid var(--primary);
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+      }
+    }
+
+    h5 {
+      font-size: 0.875rem;
+      margin-bottom: 0.2rem;
+      max-width: 50%;
+      text-align: center;
+      line-height: 2;
+    }
+
+    .input-wrapper {
+      background: white;
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+      padding: 5px;
+      margin-top: 2rem;
+      width: 400px;
+
+      input {
+        border: 0;
+        outline: 0;
+        flex: 1;
+      }
+
+      button {
+        padding: 0 1rem;
+      }
+    }
+  }
+}

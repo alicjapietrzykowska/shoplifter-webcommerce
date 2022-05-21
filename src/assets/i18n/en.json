@@ -12,7 +12,11 @@
     "saleOffers": "Sale & Offers",
     "yourCart": "Your Cart",
     "checkout": "Checkout",
-    "totalCart": "Total cart"
+    "totalCart": "Total cart",
+    "bestSellers": "Best Sellers from the last week",
+    "home": "Home",
+    "contact": "Contact",
+    "cart": "Cart"
   },
   "products": {
     "addToCart": "Add to Cart",
@@ -22,5 +26,27 @@
     "removeFromWishlist": "Remove from Wishlist",
     "collections": "Collections",
     "confirmDeleteFromCart": "Do you want to remove this product from the cart?"
+  },
+  "ads": {
+    "actionButton": "Check this out"
+  },
+  "socialMedia": {
+    "followUs": "Follow us on",
+    "twitter": "Twitter",
+    "checkInspirations": "Check inspirations on",
+    "instagram": "Instagram",
+    "likeUsOn": "Like us on",
+    "facebook": "Facebook",
+    "checkOurBoard": "Check our board on",
+    "pinterest": "Pinterest",
+    "newsletter": "Newsletter",
+    "newsletterDesc": "If you would like to receive the very latest updates on Shoplifter, new collections, behind-the-scenes image sand interviews, please click subscribe.",
+    "subscribe": "Subscribe"
+  },
+  "footer": {
+    "payment": "Pay the way you want",
+    "footerMenu": "Shoplifter shop",
+    "socialMedia": "Follow us",
+    "theme": "Shoplifter by Poka Poka Themes © 2015. All Rights Reserved"
   }
 }

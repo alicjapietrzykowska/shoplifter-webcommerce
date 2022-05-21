@@ -13,6 +13,7 @@ import { CartProductComponent } from '@components/cart/cart-product/cart-product
 import { ConfirmModalComponent } from '@components/confirm-modal/confirm-modal.component';
 import { ConfirmDialogService } from '@services/confirm-dialog.service';
 import { FooterComponent } from '@components/footer/footer.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { FooterComponent } from '@components/footer/footer.component';
     FormsModule,
     ReactiveFormsModule,
     AngularMaterialModule,
+    NgxDatatableModule,
     TranslateModule,
     RouterModule,
   ],
@@ -33,6 +35,7 @@ import { FooterComponent } from '@components/footer/footer.component';
     TranslateModule,
     ProductOverviewComponent,
     AngularMaterialModule,
+    NgxDatatableModule,
     CartComponent,
     CartProductComponent,
     ConfirmModalComponent,

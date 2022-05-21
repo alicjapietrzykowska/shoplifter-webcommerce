@@ -1,0 +1,44 @@
+<h2>
+  <div class="container">
+    {{ "general.yourCart" | translate }}
+  </div>
+</h2>
+<div class="container">
+  <div class="products">
+    <div class="product-table" *ngIf="cart.length">
+      <ngx-datatable [rows]="rows" [columns]="columns"> </ngx-datatable>
+    </div>
+    <div class="order-subtotal">
+      <div>{{ "cart.subtotal" | translate }}</div>
+      <div>{{ cartTotal | currency }}</div>
+    </div>
+  </div>
+  <div class="order-summary">
+    <div class="summary">
+      <h3>
+        <mat-icon>shopping_cart</mat-icon>
+        {{ "cart.orderSummary" | translate }}
+      </h3>
+      <div class="summary-list">
+        <div class="summary-row">
+          <div>{{ "cart.subtotal" | translate }}</div>
+          <div>{{ cartTotal | currency }}</div>
+        </div>
+        <div class="summary-row">
+          <div>{{ "cart.couponCode" | translate }}</div>
+          <input type="text" />
+        </div>
+      </div>
+      <div class="estimated-total">
+        <div>{{ "cart.estimatedTotal" | translate }}</div>
+        <div>{{ cartTotal | currency }}</div>
+      </div>
+    </div>
+    <button mat-flat-button color="primary">
+      {{ "cart.proceedToCheckout" | translate }}
+    </button>
+    <button mat-flat-button>
+      {{ "cart.continueShopping" | translate }}
+    </button>
+  </div>
+</div>

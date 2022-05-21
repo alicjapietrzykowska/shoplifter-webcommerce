@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductsService } from '@services/products.service';
 import { Subscription } from 'rxjs';
@@ -32,19 +32,21 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private productService: ProductsService,
-    private loaderService: LoaderService
+    private loaderService: LoaderService,
+    private cdRef: ChangeDetectorRef
   ) {
     // force route reload whenever params change;
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-    this.isLoadingSubscription$ = this.loaderService.loader$.subscribe(
-      (res) => {
-        this.isAppLoading = res;
-      }
-    );
   }
 
   ngOnInit() {
     this.productService.getProducts(20);
+    this.isLoadingSubscription$ = this.loaderService.loader$.subscribe(
+      (res) => {
+        this.isAppLoading = res;
+        this.cdRef.detectChanges();
+      }
+    );
   }
 
   ngOnDestroy(): void {

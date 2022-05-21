@@ -18,6 +18,19 @@
     "contact": "Contact",
     "cart": "Cart"
   },
+  "cart": {
+    "orderSubtotal": "Order Subtotal",
+    "orderSummary": "Order Summary",
+    "subtotal": "Subtotal",
+    "couponCode": "Coupon Code",
+    "estimatedTotal": "Estimated Total",
+    "proceedToCheckout": "Proceed to checkout",
+    "continueShopping": "Continue Shopping",
+    "product": "Product",
+    "category": "Category",
+    "price": "Price",
+    "amount": "Amount"
+  },
   "products": {
     "addToCart": "Add to Cart",
     "removeFromCart": "Remove from Cart",

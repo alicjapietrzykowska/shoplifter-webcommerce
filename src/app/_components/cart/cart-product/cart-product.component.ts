@@ -1,25 +1,26 @@
-import { Component, OnDestroy, Input, OnChanges } from '@angular/core';
+import { Component, OnDestroy, Input } from '@angular/core';
 import { CartService } from '@services/cart.service';
 import { Product } from '@interfaces/productDto';
 import { ConfirmDialogService } from '@services/confirm-dialog.service';
 import { DialogOptions } from '@interfaces/dialogOptionsDto';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart-product',
   templateUrl: './cart-product.component.html',
   styleUrls: ['./cart-product.component.scss'],
 })
-export class CartProductComponent implements OnChanges, OnDestroy {
+export class CartProductComponent implements OnDestroy {
   @Input() product!: Product;
-  amount = this.product?.amount || 1;
   private removeSubscription$: Subscription | undefined;
 
   constructor(
     private cartService: CartService,
     private dialogService: ConfirmDialogService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private router: Router
   ) {}
 
   removeProduct(event: MouseEvent) {
@@ -40,20 +41,8 @@ export class CartProductComponent implements OnChanges, OnDestroy {
       });
   }
 
-  updateAmount() {
-    this.cartService.updateAmount(this.product, this.amount || 1);
-  }
-
-  manageAmount(event: MouseEvent, difference: number) {
-    event.stopPropagation();
-    //prevent negative product quantity
-    if (this.amount === 0 && difference === -1) return;
-    this.amount = this.amount + difference;
-    this.updateAmount();
-  }
-
-  ngOnChanges() {
-    this.amount = this.product.amount;
+  goToProductDetails() {
+    this.router.navigate([`products/${this.product.id}`]);
   }
 
   ngOnDestroy(): void {

@@ -13,7 +13,12 @@
     <div>{{ "general.totalCart" | translate }}</div>
     <div class="cart__total-price">{{ cartTotal | currency }}</div>
   </div>
-  <button mat-flat-button [disabled]="!products.length" color="primary">
+  <button
+    [routerLink]="['/checkout']"
+    mat-flat-button
+    [disabled]="!products.length"
+    color="primary"
+  >
     {{ "general.checkout" | translate }}
   </button>
 </div>

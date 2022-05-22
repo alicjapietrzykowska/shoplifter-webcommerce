@@ -32,7 +32,6 @@ export class CheckoutComponent implements OnInit {
     this.cartTotal = this.cartService.cartTotal;
     this.cart = this.cartService.cart;
     this.rows = this.cart;
-    console.log(this.cart);
     this.cartSubscription$ = this.cartService.cart$.subscribe((cart) => {
       this.cartTotal = this.cartService.cartTotal;
       this.cart = cart;

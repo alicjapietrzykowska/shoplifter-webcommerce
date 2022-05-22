@@ -1,31 +1,15 @@
 <div class="product-cart" *ngIf="product">
-  <div class="product-cart__image">
+  <div class="product-cart__image" (click)="goToProductDetails()">
     <img [src]="product.image" [alt]="product.title" />
   </div>
   <div class="product-cart__info">
     <div class="product-cart__info-title">
-      <h3>{{ product.title }}</h3>
+      <h3 (click)="goToProductDetails()">{{ product.title }}</h3>
       <button type="button" (click)="removeProduct($event)" mat-icon-button>
         <mat-icon>close</mat-icon>
       </button>
     </div>
     <div class="product-cart__info-price">{{ product.price | currency }}</div>
-    <form class="product-cart__amount">
-      <button
-        [disabled]="amount === 1"
-        type="button"
-        (click)="manageAmount($event, -1)"
-      >
-        -
-      </button>
-      <input
-        type="number"
-        min="1"
-        [(ngModel)]="amount"
-        (ngModelChange)="updateAmount()"
-        [ngModelOptions]="{ standalone: true }"
-      />
-      <button type="button" (click)="manageAmount($event, 1)">+</button>
-    </form>
+    <app-amount [product]="product"></app-amount>
   </div>
 </div>

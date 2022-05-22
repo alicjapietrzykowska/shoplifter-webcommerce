@@ -14,6 +14,7 @@ import { ConfirmModalComponent } from '@components/confirm-modal/confirm-modal.c
 import { ConfirmDialogService } from '@services/confirm-dialog.service';
 import { FooterComponent } from '@components/footer/footer.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { AmountComponent } from '@components/amount/amount.component';
 
 @NgModule({
   imports: [
@@ -39,6 +40,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     CartComponent,
     CartProductComponent,
     ConfirmModalComponent,
+    AmountComponent,
   ],
   declarations: [
     HeaderComponent,
@@ -49,6 +51,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     CartComponent,
     CartProductComponent,
     ConfirmModalComponent,
+    AmountComponent,
   ],
   entryComponents: [ConfirmModalComponent],
   providers: [ConfirmDialogService],

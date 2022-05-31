@@ -35,5 +35,32 @@
       <div>{{ cartTotal | currency }}</div>
     </div>
   </div>
-  <app-order-summary></app-order-summary>
+  <div class="order-summary">
+    <div class="summary">
+      <h3>
+        <mat-icon>shopping_cart</mat-icon>
+        {{ "cart.orderSummary" | translate }}
+      </h3>
+      <div class="summary-list">
+        <div class="summary-row">
+          <div>{{ "cart.subtotal" | translate }}</div>
+          <div>{{ cartTotal | currency }}</div>
+        </div>
+        <div class="summary-row">
+          <div>{{ "cart.couponCode" | translate }}</div>
+          <input type="text" />
+        </div>
+      </div>
+      <div class="estimated-total">
+        <div>{{ "cart.estimatedTotal" | translate }}</div>
+        <div>{{ cartTotal | currency }}</div>
+      </div>
+    </div>
+    <button mat-flat-button color="primary">
+      {{ "cart.proceedToCheckout" | translate }}
+    </button>
+    <button mat-flat-button>
+      {{ "cart.continueShopping" | translate }}
+    </button>
+  </div>
 </div>

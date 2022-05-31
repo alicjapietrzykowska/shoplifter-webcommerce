@@ -60,10 +60,26 @@ export class CartService {
     product.isInCart = false;
   }
 
+  calculateTotalWithDiscount(total: number, discount: number) {
+    const totalAfterDiscount = total - total * (discount / 100);
+    return Math.round(totalAfterDiscount * 100) / 100;
+  }
+
   calculateCartTotal(cart: Product[]) {
-    return (
-      cart.reduce((n, { price, amount = 1 }) => n + price * amount, 0) || 0
-    );
+    const total =
+      cart.reduce((n, { price, amount = 1 }) => n + price * amount, 0) || 0;
+    return Math.round(total * 100) / 100;
+  }
+
+  getCartTotalWithDiscount() {
+    const discount = this.localStorageService.get('discount');
+    const total = this.calculateCartTotal(this.cart);
+
+    if (discount) {
+      return this.calculateTotalWithDiscount(total, Number(discount));
+    } else {
+      return total;
+    }
   }
 
   manageProduct(product: Product) {

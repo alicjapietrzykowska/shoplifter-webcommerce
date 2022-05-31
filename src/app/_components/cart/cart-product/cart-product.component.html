@@ -5,7 +5,12 @@
   <div class="product-cart__info">
     <div class="product-cart__info-title">
       <h3 (click)="goToProductDetails()">{{ product.title }}</h3>
-      <button type="button" (click)="removeProduct($event)" mat-icon-button>
+      <button
+        [title]="'cart.removeProduct' | translate"
+        type="button"
+        (click)="removeProduct($event)"
+        mat-icon-button
+      >
         <mat-icon>close</mat-icon>
       </button>
     </div>

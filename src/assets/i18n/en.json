@@ -5,6 +5,9 @@
     "cancel": "Cancel",
     "areYouSure": "Are you sure?"
   },
+  "demo": {
+    "coupon": "10OFF or 50OFF"
+  },
   "general": {
     "appName": "shoplifter.",
     "wishlist": "Wishlist",
@@ -18,6 +21,22 @@
     "contact": "Contact",
     "cart": "Cart"
   },
+  "cart": {
+    "orderSubtotal": "Order Subtotal",
+    "orderSummary": "Order Summary",
+    "subtotal": "Subtotal",
+    "couponCode": "Coupon Code",
+    "estimatedTotal": "Estimated Total",
+    "proceedToCheckout": "Proceed to checkout",
+    "continueShopping": "Continue Shopping",
+    "product": "Product",
+    "category": "Category",
+    "price": "Price",
+    "amount": "Amount",
+    "discount": "A code for a {{discount}}% discount has been applied.",
+    "removeProduct": "Remove product",
+    "removeDiscount": "Remove discount"
+  },
   "products": {
     "addToCart": "Add to Cart",
     "removeFromCart": "Remove from Cart",
@@ -25,7 +44,8 @@
     "addToWishlist": "Add to Wishlist",
     "removeFromWishlist": "Remove from Wishlist",
     "collections": "Collections",
-    "confirmDeleteFromCart": "Do you want to remove this product from the cart?"
+    "confirmDeleteFromCart": "Do you want to remove this product from the cart?",
+    "no": "Product No. "
   },
   "ads": {
     "actionButton": "Check this out"

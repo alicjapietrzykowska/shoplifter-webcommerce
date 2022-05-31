@@ -45,11 +45,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
     });
   }
 
+  calculateItemsAmount(cart: Product[]) {
+    return cart.reduce((n, product) => n + product.amount, 0);
+  }
+
   manageCart() {
-    this.cartLength = this.cartService.cart.length;
+    this.cartLength = this.calculateItemsAmount(this.cartService.cart);
     this.cartTotal = this.cartService.cartTotal;
     this.cartSubscription$ = this.cartService.cart$.subscribe((cart) => {
-      this.cartLength = cart.length;
+      this.cartLength = this.calculateItemsAmount(cart);
       this.cartTotal = this.cartService.cartTotal;
     });
   }

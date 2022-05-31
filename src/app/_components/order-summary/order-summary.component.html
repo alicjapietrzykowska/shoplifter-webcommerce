@@ -1,0 +1,38 @@
+<div class="summary">
+  <h3>
+    <mat-icon>shopping_cart</mat-icon>
+    {{ "cart.orderSummary" | translate }}
+  </h3>
+  <div class="summary-list">
+    <div class="summary-row">
+      <div>{{ "cart.subtotal" | translate }}</div>
+      <div>{{ cartTotal | currency }}</div>
+    </div>
+    <div class="summary-row">
+      <div>{{ "cart.couponCode" | translate }}</div>
+      <input
+        type="text"
+        [(ngModel)]="discountCoupon"
+        (ngModelChange)="checkDiscount()"
+        [placeholder]="'demo.coupon' | translate"
+      />
+    </div>
+    <div class="discount" *ngIf="discount">
+      <div>
+        {{ "cart.discount" | translate: { discount: this.discount } }}
+      </div>
+      <button
+        [title]="'cart.removeDiscount' | translate"
+        type="button"
+        (click)="removeDiscount()"
+        mat-icon-button
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="estimated-total">
+    <div>{{ "cart.estimatedTotal" | translate }}</div>
+    <div>{{ totalWithDiscount | currency }}</div>
+  </div>
+</div>

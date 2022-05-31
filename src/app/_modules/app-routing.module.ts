@@ -24,6 +24,20 @@ export const routes: Routes = [
             (m) => m.CategoryModule
           ),
       },
+      {
+        path: 'cart',
+        loadChildren: () =>
+          import('../routes/cart-summary/cart-summary.module').then(
+            (m) => m.CartSummaryModule
+          ),
+      },
+      {
+        path: 'checkout',
+        loadChildren: () =>
+          import('../routes/checkout/checkout.module').then(
+            (m) => m.CheckoutModule
+          ),
+      },
     ],
   },
   // { path: '403', component: Page403Component },

@@ -13,6 +13,9 @@ import { CartProductComponent } from '@components/cart/cart-product/cart-product
 import { ConfirmModalComponent } from '@components/confirm-modal/confirm-modal.component';
 import { ConfirmDialogService } from '@services/confirm-dialog.service';
 import { FooterComponent } from '@components/footer/footer.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { AmountComponent } from '@components/amount/amount.component';
+import { OrderSummaryComponent } from '@components/order-summary/order-summary.component';
 
 @NgModule({
   imports: [
@@ -20,6 +23,7 @@ import { FooterComponent } from '@components/footer/footer.component';
     FormsModule,
     ReactiveFormsModule,
     AngularMaterialModule,
+    NgxDatatableModule,
     TranslateModule,
     RouterModule,
   ],
@@ -33,9 +37,12 @@ import { FooterComponent } from '@components/footer/footer.component';
     TranslateModule,
     ProductOverviewComponent,
     AngularMaterialModule,
+    NgxDatatableModule,
     CartComponent,
     CartProductComponent,
     ConfirmModalComponent,
+    AmountComponent,
+    OrderSummaryComponent,
   ],
   declarations: [
     HeaderComponent,
@@ -46,6 +53,8 @@ import { FooterComponent } from '@components/footer/footer.component';
     CartComponent,
     CartProductComponent,
     ConfirmModalComponent,
+    AmountComponent,
+    OrderSummaryComponent,
   ],
   entryComponents: [ConfirmModalComponent],
   providers: [ConfirmDialogService],

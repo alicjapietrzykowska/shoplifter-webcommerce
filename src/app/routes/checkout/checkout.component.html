@@ -1,0 +1,39 @@
+<h2>
+  <div class="container">
+    {{ "general.yourCart" | translate }}
+  </div>
+</h2>
+<div class="container">
+  <div class="products">
+    <div class="product-table" *ngIf="cart.length">
+      <ngx-datatable [rows]="rows" [columns]="columns">
+        <ng-container *ngFor="let column of columns">
+          <ngx-datatable-column
+            name="{{ column.name }}"
+            prop="{{ column.prop }}"
+            *ngIf="column.prop === 'amount'"
+          >
+            <ng-template
+              let-value="value"
+              let-row="row"
+              ngx-datatable-cell-template
+            >
+              <app-amount [product]="row"></app-amount>
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column
+            *ngIf="column.prop !== 'amount'"
+            name="{{ column.name }}"
+            prop="{{ column.prop }}"
+          >
+          </ngx-datatable-column>
+        </ng-container>
+      </ngx-datatable>
+    </div>
+    <div class="order-subtotal">
+      <div>{{ "cart.subtotal" | translate }}</div>
+      <div>{{ cartTotal | currency }}</div>
+    </div>
+  </div>
+  <app-order-summary></app-order-summary>
+</div>

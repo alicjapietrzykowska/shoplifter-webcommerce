@@ -14,7 +14,7 @@
     <div class="cart__total-price">{{ cartTotal | currency }}</div>
   </div>
   <button
-    [routerLink]="['/checkout']"
+    [routerLink]="['/cart']"
     mat-flat-button
     [disabled]="!products.length"
     color="primary"

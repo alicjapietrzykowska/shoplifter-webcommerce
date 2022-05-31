@@ -25,6 +25,13 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'cart',
+        loadChildren: () =>
+          import('../routes/cart-summary/cart-summary.module').then(
+            (m) => m.CartSummaryModule
+          ),
+      },
+      {
         path: 'checkout',
         loadChildren: () =>
           import('../routes/checkout/checkout.module').then(

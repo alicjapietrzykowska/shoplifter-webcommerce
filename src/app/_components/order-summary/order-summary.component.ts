@@ -50,6 +50,7 @@ export class OrderSummaryComponent implements OnInit, OnDestroy {
 
     this.cartSubscription$ = this.cartService.cart$.subscribe((cart) => {
       this.cartTotal = this.cartService.cartTotal;
+      this.totalWithDiscount = this.cartService.getCartTotalWithDiscount();
     });
   }
 

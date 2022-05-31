@@ -6,8 +6,61 @@
 <div class="container">
   <div class="products">
     <div class="product-table" *ngIf="cart.length">
-      <ngx-datatable [rows]="rows" [columns]="columns">
+      <ngx-datatable [rows]="rows" rowHeight="auto">
         <ng-container *ngFor="let column of columns">
+          <ngx-datatable-column
+            name="{{ column.name }}"
+            prop="{{ column.prop }}"
+            *ngIf="column.prop === 'title'"
+            [width]="400"
+          >
+            <ng-template
+              let-value="value"
+              let-row="row"
+              ngx-datatable-cell-template
+            >
+              <div class="title-column" (click)="goToProductDetails(row)">
+                <img [src]="row.image" />
+                <div>
+                  <h3>{{ row.title }}</h3>
+                  <div class="product-id">
+                    {{ "products.no" | translate }}{{ row.id }}
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column
+            name="{{ column.name }}"
+            prop="{{ column.prop }}"
+            *ngIf="column.prop === 'category'"
+          >
+            <ng-template
+              let-value="value"
+              let-row="row"
+              ngx-datatable-cell-template
+            >
+              <a
+                [routerLink]="['/product-list']"
+                [queryParams]="{ category: value }"
+              >
+                {{ value | titlecase }}
+              </a>
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column
+            name="{{ column.name }}"
+            prop="{{ column.prop }}"
+            *ngIf="column.prop === 'price'"
+          >
+            <ng-template
+              let-value="value"
+              let-row="row"
+              ngx-datatable-cell-template
+            >
+              {{ value | currency }}
+            </ng-template>
+          </ngx-datatable-column>
           <ngx-datatable-column
             name="{{ column.name }}"
             prop="{{ column.prop }}"
@@ -22,10 +75,26 @@
             </ng-template>
           </ngx-datatable-column>
           <ngx-datatable-column
-            *ngIf="column.prop !== 'amount'"
             name="{{ column.name }}"
             prop="{{ column.prop }}"
+            *ngIf="column.prop === 'close'"
+            [sortable]="false"
+            [width]="50"
           >
+            <ng-template
+              let-value="value"
+              let-row="row"
+              ngx-datatable-cell-template
+            >
+              <button
+                [title]="'cart.removeProduct' | translate"
+                type="button"
+                (click)="removeProduct(row)"
+                mat-icon-button
+              >
+                <mat-icon>close</mat-icon>
+              </button>
+            </ng-template>
           </ngx-datatable-column>
         </ng-container>
       </ngx-datatable>
@@ -36,27 +105,8 @@
     </div>
   </div>
   <div class="order-summary">
-    <div class="summary">
-      <h3>
-        <mat-icon>shopping_cart</mat-icon>
-        {{ "cart.orderSummary" | translate }}
-      </h3>
-      <div class="summary-list">
-        <div class="summary-row">
-          <div>{{ "cart.subtotal" | translate }}</div>
-          <div>{{ cartTotal | currency }}</div>
-        </div>
-        <div class="summary-row">
-          <div>{{ "cart.couponCode" | translate }}</div>
-          <input type="text" />
-        </div>
-      </div>
-      <div class="estimated-total">
-        <div>{{ "cart.estimatedTotal" | translate }}</div>
-        <div>{{ cartTotal | currency }}</div>
-      </div>
-    </div>
-    <button mat-flat-button color="primary">
+    <app-order-summary></app-order-summary>
+    <button [routerLink]="['/checkout']" mat-flat-button color="primary">
       {{ "cart.proceedToCheckout" | translate }}
     </button>
     <button mat-flat-button>

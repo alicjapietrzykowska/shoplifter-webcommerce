@@ -44,7 +44,8 @@
     "addToWishlist": "Add to Wishlist",
     "removeFromWishlist": "Remove from Wishlist",
     "collections": "Collections",
-    "confirmDeleteFromCart": "Do you want to remove this product from the cart?"
+    "confirmDeleteFromCart": "Do you want to remove this product from the cart?",
+    "no": "Product No. "
   },
   "ads": {
     "actionButton": "Check this out"

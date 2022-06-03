@@ -68,5 +68,10 @@
     "footerMenu": "Shoplifter shop",
     "socialMedia": "Follow us",
     "theme": "Shoplifter by Poka Poka Themes © 2015. All Rights Reserved"
+  },
+  "checkout": {
+    "shippingInfo": "Shipping information",
+    "paymentMethod": "Payment method",
+    "orderReview": "Order review"
   }
 }

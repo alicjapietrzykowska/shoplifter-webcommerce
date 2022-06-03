@@ -14,19 +14,7 @@ h2 {
   border-bottom: 1px solid var(--border-color);
 }
 
-.products {
+.checkout-wrapper {
   flex: 1;
   margin-right: 2rem;
-
-  .order-subtotal {
-    height: 70px;
-    background: #f4f4f4;
-    border: 1px solid var(--border-color);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    font-size: 1.125rem;
-    padding: 0 2rem;
-  }
 }

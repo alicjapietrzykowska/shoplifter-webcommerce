@@ -9,6 +9,10 @@ const routes: Routes = [
     path: '',
     component: CheckoutComponent,
   },
+  {
+    path: ':tab',
+    component: CheckoutComponent,
+  },
 ];
 
 @NgModule({

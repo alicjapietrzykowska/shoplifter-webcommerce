@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Product } from '@interfaces/productDto';
 import { Subscription } from 'rxjs';
 import { CartService } from '@services/cart.service';
@@ -12,6 +12,8 @@ import { Discount } from '@interfaces/discountDto';
   styleUrls: ['./order-summary.component.scss'],
 })
 export class OrderSummaryComponent implements OnInit, OnDestroy {
+  @Input() readonly: boolean = false;
+
   cartLength = 0;
   cartTotal = 0;
   totalWithDiscount = 0;

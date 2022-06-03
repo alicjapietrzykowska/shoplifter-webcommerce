@@ -11,11 +11,13 @@
     <div class="summary-row">
       <div>{{ "cart.couponCode" | translate }}</div>
       <input
+        *ngIf="!readonly"
         type="text"
         [(ngModel)]="discountCoupon"
         (ngModelChange)="checkDiscount()"
         [placeholder]="'demo.coupon' | translate"
       />
+      <div>{{ discount?.code || "common.none" | translate }}</div>
     </div>
     <div class="discount" *ngIf="discount">
       <div>
@@ -26,6 +28,7 @@
         type="button"
         (click)="removeDiscount()"
         mat-icon-button
+        *ngIf="!readonly"
       >
         <mat-icon>close</mat-icon>
       </button>

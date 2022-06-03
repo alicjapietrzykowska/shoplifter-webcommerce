@@ -1,9 +1,9 @@
 <h2>
-  <div class="container">
+  <div class="">
     {{ "general.checkout" | translate }}
   </div>
 </h2>
-<div class="container">
+<div class="content-wrapper">
   <div class="checkout-wrapper">
     <mat-tab-group [selectedIndex]="activeTab">
       <mat-tab label="form" disabled *ngFor="let tab of tabs">
@@ -24,15 +24,23 @@
     </mat-tab-group>
   </div>
 
-  <app-order-summary></app-order-summary>
+  <app-order-summary [readonly]="true"></app-order-summary>
 </div>
 
 <ng-template #tabContentTemplate let-tab>
-  <div *ngIf="tab.id === 0">
-    Formularz! <button (click)="changeTab(tab)">next</button>
+  <div class="tab">
+    <div class="container">
+      <div class="tab-header">
+        <h3>
+          <span>{{ tab.id + 1 }}/{{ tabs.length }}</span> {{ tab.title }}
+        </h3>
+        <button (click)="changeTab(tab)">next</button>
+      </div>
+      <div *ngIf="tab.id === 0">
+        <app-shipping-form></app-shipping-form>
+      </div>
+      <div *ngIf="tab.id === 1">Płatność!</div>
+      <div *ngIf="tab.id === 2">Podsumowanie!</div>
+    </div>
   </div>
-  <div *ngIf="tab.id === 1">
-    Płatność! <button (click)="changeTab(tab)">next</button>
-  </div>
-  <div *ngIf="tab.id === 2">Podsumowanie!</div>
 </ng-template>

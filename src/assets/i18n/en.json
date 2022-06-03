@@ -3,7 +3,8 @@
     "items": "items",
     "ok": "Ok",
     "cancel": "Cancel",
-    "areYouSure": "Are you sure?"
+    "areYouSure": "Are you sure?",
+    "none": "None"
   },
   "demo": {
     "coupon": "10OFF or 50OFF"
@@ -73,5 +74,8 @@
     "shippingInfo": "Shipping information",
     "paymentMethod": "Payment method",
     "orderReview": "Order review"
+  },
+  "shippingForm": {
+    "fullName": "Full name"
   }
 }

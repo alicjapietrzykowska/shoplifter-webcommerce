@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '@modules/shared.module';
 import { Routes, RouterModule } from '@angular/router';
 import { CheckoutComponent } from './checkout.component';
+import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [CommonModule, SharedModule, RouterModule.forChild(routes)],
-  declarations: [CheckoutComponent],
+  declarations: [CheckoutComponent, ShippingFormComponent],
 })
 export class CheckoutModule {}

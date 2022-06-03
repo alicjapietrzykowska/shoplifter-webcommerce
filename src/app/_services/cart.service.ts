@@ -76,7 +76,7 @@ export class CartService {
     const total = this.calculateCartTotal(this.cart);
 
     if (discount) {
-      return this.calculateTotalWithDiscount(total, Number(discount));
+      return this.calculateTotalWithDiscount(total, Number(discount.value));
     } else {
       return total;
     }

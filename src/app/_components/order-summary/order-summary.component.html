@@ -19,7 +19,7 @@
     </div>
     <div class="discount" *ngIf="discount">
       <div>
-        {{ "cart.discount" | translate: { discount: this.discount } }}
+        {{ "cart.discount" | translate: { discount: this.discount.value } }}
       </div>
       <button
         [title]="'cart.removeDiscount' | translate"

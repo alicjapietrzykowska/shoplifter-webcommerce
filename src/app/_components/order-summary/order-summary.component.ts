@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { CartService } from '@services/cart.service';
 import { discountCodes } from 'assets/static/discounts.static';
 import { LocalStorageService } from '@services/localStorage.service';
+import { Discount } from '@interfaces/discountDto';
 
 @Component({
   selector: 'app-order-summary',
@@ -16,7 +17,7 @@ export class OrderSummaryComponent implements OnInit, OnDestroy {
   totalWithDiscount = 0;
   cart: Product[] = [];
   discountCoupon = '';
-  discount = 0;
+  discount!: Discount | undefined;
 
   private cartSubscription$: Subscription | undefined;
   constructor(
@@ -31,15 +32,15 @@ export class OrderSummaryComponent implements OnInit, OnDestroy {
         discount.code.toLowerCase() === this.discountCoupon.toLowerCase()
     );
     if (codeDiscount) {
-      this.discount = codeDiscount.value;
-      this.localStorageService.add('discount', String(codeDiscount.value));
+      this.discount = codeDiscount;
+      this.localStorageService.add('discount', codeDiscount);
       this.totalWithDiscount = this.cartService.getCartTotalWithDiscount();
     }
   }
 
   removeDiscount() {
     this.localStorageService.remove('discount');
-    this.discount = 0;
+    this.discount = undefined;
     this.discountCoupon = '';
     this.totalWithDiscount = this.cartService.getCartTotalWithDiscount();
   }
@@ -56,9 +57,11 @@ export class OrderSummaryComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.manageCart();
-    const localDiscount = this.localStorageService.get('discount');
+    const localDiscount: Discount | undefined =
+      this.localStorageService.get('discount');
     if (localDiscount) {
-      this.discount = Number(localDiscount);
+      this.discount = localDiscount;
+      this.discountCoupon = localDiscount.code;
     }
   }
 

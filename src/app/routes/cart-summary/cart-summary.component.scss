@@ -58,6 +58,10 @@ a {
   color: var(--accent);
 }
 
+.remove-btn {
+  justify-content: center;
+}
+
 .order-summary {
   display: flex;
   flex-direction: column;

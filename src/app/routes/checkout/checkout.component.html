@@ -24,7 +24,10 @@
     </mat-tab-group>
   </div>
 
-  <app-order-summary [readonly]="true"></app-order-summary>
+  <app-order-summary
+    [readonly]="true"
+    [shipping]="shippingPrice"
+  ></app-order-summary>
 </div>
 
 <ng-template #tabContentTemplate let-tab>
@@ -36,7 +39,10 @@
         </h3>
       </div>
       <div *ngIf="tab.id === 0">
-        <app-shipping-form (submit)="changeTab(tab)"></app-shipping-form>
+        <app-shipping-form
+          (saveShipping)="saveShipping($event)"
+          (submit)="changeTab(tab)"
+        ></app-shipping-form>
       </div>
       <div *ngIf="tab.id === 1">Płatność!</div>
       <div *ngIf="tab.id === 2">Podsumowanie!</div>

@@ -33,6 +33,7 @@ export class CheckoutComponent implements OnInit {
     },
   ];
   activeTab = this.tabs.findIndex((tab) => tab.id === 0);
+  shippingPrice!: number;
 
   constructor(
     private translate: TranslateService,
@@ -42,6 +43,10 @@ export class CheckoutComponent implements OnInit {
     const routeTab = this.activatedRoute.snapshot.params['tab'];
     if (!routeTab) this.location.go(`/checkout/${this.tabs[0].route}`);
     this.activeTab = this.tabs.findIndex((tab) => tab.route === routeTab);
+  }
+
+  saveShipping(shippingPrice: number) {
+    this.shippingPrice = shippingPrice;
   }
 
   changeTab(tab: CheckoutTab) {

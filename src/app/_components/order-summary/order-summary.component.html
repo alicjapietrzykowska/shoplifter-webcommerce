@@ -9,6 +9,10 @@
       <div>{{ cartTotal | currency }}</div>
     </div>
     <div class="summary-row">
+      <div>{{ "cart.shippingCost" | translate }}</div>
+      <div>{{ (shipping | currency) || "-" }}</div>
+    </div>
+    <div class="summary-row">
       <div>{{ "cart.couponCode" | translate }}</div>
       <input
         *ngIf="!readonly"

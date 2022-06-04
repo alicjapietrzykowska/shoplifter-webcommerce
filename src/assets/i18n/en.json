@@ -28,6 +28,7 @@
     "orderSummary": "Order Summary",
     "subtotal": "Subtotal",
     "couponCode": "Coupon Code",
+    "shippingCost": "Shipping Cost",
     "estimatedTotal": "Estimated Total",
     "proceedToCheckout": "Proceed to checkout",
     "continueShopping": "Continue Shopping",

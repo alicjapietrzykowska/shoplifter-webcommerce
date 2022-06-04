@@ -13,6 +13,7 @@ import { Discount } from '@interfaces/discountDto';
 })
 export class OrderSummaryComponent implements OnInit, OnDestroy {
   @Input() readonly: boolean = false;
+  @Input() shipping!: number;
 
   cartLength = 0;
   cartTotal = 0;
@@ -69,5 +70,10 @@ export class OrderSummaryComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     if (this.cartSubscription$) this.cartSubscription$.unsubscribe();
+  }
+
+  ngOnChanges() {
+    this.cartService.shippingCost = this.shipping;
+    this.totalWithDiscount = this.cartService.getCartTotalWithDiscount();
   }
 }

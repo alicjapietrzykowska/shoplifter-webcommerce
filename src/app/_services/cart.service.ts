@@ -9,6 +9,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class CartService {
   private _cart: BehaviorSubject<Product[]>;
   private _cartTotal: BehaviorSubject<number>;
+  public shippingCost: number = 0;
   constructor(private localStorageService: LocalStorageService) {
     const localCart = this.localStorageService.get('cart') || [];
     const localCartTotal = this.calculateCartTotal(localCart);
@@ -68,7 +69,7 @@ export class CartService {
   calculateCartTotal(cart: Product[]) {
     const total =
       cart.reduce((n, { price, amount = 1 }) => n + price * amount, 0) || 0;
-    return Math.round(total * 100) / 100;
+    return Math.round(total * 100) / 100 + this.shippingCost;
   }
 
   getCartTotalWithDiscount() {

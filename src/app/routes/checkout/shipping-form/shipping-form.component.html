@@ -1,6 +1,83 @@
-<div [formGroup]="shippingForm">
-  <mat-form-field appearance="fill">
+<form [formGroup]="shippingForm">
+  <mat-form-field appearance="outline">
     <mat-label>{{ "shippingForm.fullName" | translate }}</mat-label>
-    <input matInput formControlName="fullName" />
+    <input autocomplete="name" matInput formControlName="fullName" />
   </mat-form-field>
-</div>
+  <app-inline-errors
+    [form]="shippingForm"
+    controlName="fullName"
+  ></app-inline-errors>
+  <mat-form-field appearance="outline">
+    <mat-label>{{ "shippingForm.company" | translate }}</mat-label>
+    <input matInput formControlName="company" />
+  </mat-form-field>
+  <app-inline-errors
+    [form]="shippingForm"
+    controlName="company"
+  ></app-inline-errors>
+  <mat-form-field appearance="outline">
+    <mat-label>{{ "shippingForm.email" | translate }}</mat-label>
+    <input matInput type="email" formControlName="email" />
+  </mat-form-field>
+  <app-inline-errors
+    [form]="shippingForm"
+    controlName="email"
+  ></app-inline-errors>
+  <mat-form-field appearance="outline">
+    <mat-label>{{ "shippingForm.phone" | translate }}</mat-label>
+    <input matInput type="phone" formControlName="phone" />
+  </mat-form-field>
+  <app-inline-errors
+    [form]="shippingForm"
+    controlName="phone"
+  ></app-inline-errors>
+
+  <mat-divider></mat-divider>
+
+  <mat-form-field appearance="outline">
+    <mat-label>{{ "shippingForm.country" | translate }}</mat-label>
+    <input matInput formControlName="country" />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>{{ "shippingForm.address" | translate }}</mat-label>
+    <input autocomplete="street-address" matInput formControlName="address" />
+  </mat-form-field>
+  <div class="inline-fields">
+    <mat-form-field appearance="outline">
+      <mat-label>{{ "shippingForm.city" | translate }}</mat-label>
+      <input matInput formControlName="city" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>{{ "shippingForm.zipCode" | translate }}</mat-label>
+      <input matInput formControlName="zipCode" />
+    </mat-form-field>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <mat-form-field appearance="outline">
+    <mat-label>{{ "shippingForm.shipping" | translate }}</mat-label>
+    <mat-select formControlName="shipping">
+      <mat-option
+        *ngFor="let shipping of shippingOptions"
+        [value]="shipping.price"
+      >
+        <span>{{ shipping.name | translate }} - </span>
+        <span class="price">{{ shipping.price | currency }}</span>
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <app-inline-errors
+    [form]="shippingForm"
+    controlName="shipping"
+  ></app-inline-errors>
+  <button
+    (click)="saveForm()"
+    [disabled]="shippingForm.invalid"
+    mat-flat-button
+    color="primary"
+  >
+    {{ "common.nextStep" | translate }}:
+    <span>{{ "checkout.paymentMethod" | translate }}</span>
+  </button>
+</form>

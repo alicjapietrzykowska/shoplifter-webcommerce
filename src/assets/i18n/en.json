@@ -4,7 +4,8 @@
     "ok": "Ok",
     "cancel": "Cancel",
     "areYouSure": "Are you sure?",
-    "none": "None"
+    "none": "None",
+    "nextStep": "Next step"
   },
   "demo": {
     "coupon": "10OFF or 50OFF"
@@ -76,6 +77,25 @@
     "orderReview": "Order review"
   },
   "shippingForm": {
-    "fullName": "Full name"
+    "fullName": "Full name",
+    "company": "Company",
+    "email": "E-mail",
+    "phone": "Phone",
+    "country": "Country",
+    "address": "Address",
+    "city": "City",
+    "zipCode": "ZIP Code",
+    "shipping": "Shipping Options"
+  },
+  "shippingOptions": {
+    "quick": "Quick Shipping",
+    "insured": "Insured Shipping"
+  },
+  "inlineErrors": {
+    "email": "Invalid email format",
+    "required": "Field required",
+    "phone": "Invalid phone format",
+    "maxlength": "The maximum number of characters has been exceeded",
+    "minlength": "The minimum number of characters is not provided"
   }
 }

@@ -16,6 +16,7 @@ import { FooterComponent } from '@components/footer/footer.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { AmountComponent } from '@components/amount/amount.component';
 import { OrderSummaryComponent } from '@components/order-summary/order-summary.component';
+import { InlineErrorsComponent } from '@components/inlineErrors/inlineErrors.component';
 
 @NgModule({
   imports: [
@@ -43,6 +44,7 @@ import { OrderSummaryComponent } from '@components/order-summary/order-summary.c
     ConfirmModalComponent,
     AmountComponent,
     OrderSummaryComponent,
+    InlineErrorsComponent,
   ],
   declarations: [
     HeaderComponent,
@@ -55,6 +57,7 @@ import { OrderSummaryComponent } from '@components/order-summary/order-summary.c
     ConfirmModalComponent,
     AmountComponent,
     OrderSummaryComponent,
+    InlineErrorsComponent,
   ],
   entryComponents: [ConfirmModalComponent],
   providers: [ConfirmDialogService],

@@ -34,10 +34,9 @@
         <h3>
           <span>{{ tab.id + 1 }}/{{ tabs.length }}</span> {{ tab.title }}
         </h3>
-        <button (click)="changeTab(tab)">next</button>
       </div>
       <div *ngIf="tab.id === 0">
-        <app-shipping-form></app-shipping-form>
+        <app-shipping-form (submit)="changeTab(tab)"></app-shipping-form>
       </div>
       <div *ngIf="tab.id === 1">Płatność!</div>
       <div *ngIf="tab.id === 2">Podsumowanie!</div>

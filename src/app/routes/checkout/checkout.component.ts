@@ -45,9 +45,11 @@ export class CheckoutComponent implements OnInit {
   }
 
   changeTab(tab: CheckoutTab) {
+    tab.finished = true;
     this.activeTab = tab.id + 1;
     const newTab = this.tabs.find((newTab) => newTab.id === this.activeTab);
     if (newTab) this.location.go(`/checkout/${newTab.route}`);
+    window.scroll(0, 0);
   }
 
   ngOnInit() {}

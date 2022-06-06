@@ -5,6 +5,7 @@ import { CartService } from '@services/cart.service';
 import { discountCodes } from 'assets/static/discounts.static';
 import { LocalStorageService } from '@services/localStorage.service';
 import { Discount } from '@interfaces/discountDto';
+import { shippingOptions } from 'assets/static/shipping.static';
 
 @Component({
   selector: 'app-order-summary',
@@ -21,6 +22,7 @@ export class OrderSummaryComponent implements OnInit, OnDestroy {
   cart: Product[] = [];
   discountCoupon = '';
   discount!: Discount | undefined;
+  shippingType: any = {};
 
   private cartSubscription$: Subscription | undefined;
   constructor(
@@ -58,6 +60,11 @@ export class OrderSummaryComponent implements OnInit, OnDestroy {
     });
   }
 
+  manageShippingCost() {
+    this.cartService.shippingCost = this.shipping;
+    this.totalWithDiscount = this.cartService.getCartTotalWithDiscount();
+  }
+
   ngOnInit() {
     this.manageCart();
     const localDiscount: Discount | undefined =
@@ -66,6 +73,14 @@ export class OrderSummaryComponent implements OnInit, OnDestroy {
       this.discount = localDiscount;
       this.discountCoupon = localDiscount.code;
     }
+
+    const address = this.localStorageService.get('shipping');
+    if (address) {
+      this.shipping =
+        shippingOptions.find((option) => option.price === address.shipping)
+          ?.price || 0;
+      this.manageShippingCost();
+    }
   }
 
   ngOnDestroy(): void {
@@ -73,7 +88,6 @@ export class OrderSummaryComponent implements OnInit, OnDestroy {
   }
 
   ngOnChanges() {
-    this.cartService.shippingCost = this.shipping;
-    this.totalWithDiscount = this.cartService.getCartTotalWithDiscount();
+    this.manageShippingCost();
   }
 }

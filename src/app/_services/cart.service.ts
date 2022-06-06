@@ -69,7 +69,7 @@ export class CartService {
   calculateCartTotal(cart: Product[]) {
     const total =
       cart.reduce((n, { price, amount = 1 }) => n + price * amount, 0) || 0;
-    return Math.round(total * 100) / 100 + this.shippingCost;
+    return Math.round(total * 100) / 100 + (this.shippingCost || 0);
   }
 
   getCartTotalWithDiscount() {

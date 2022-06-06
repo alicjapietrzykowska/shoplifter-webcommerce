@@ -5,13 +5,22 @@
     "cancel": "Cancel",
     "areYouSure": "Are you sure?",
     "none": "None",
-    "nextStep": "Next step"
+    "nextStep": "Next step",
+    "backToMain": "Go back to main page"
   },
   "demo": {
-    "coupon": "10OFF or 50OFF"
+    "coupon": "10OFF or 50OFF",
+    "testCardData": "Dummy Card Data (for demo purposes)",
+    "cardNumber": "Card number",
+    "cvv": "CVV",
+    "any3Digits": "Any 3 digit number",
+    "date": "Date",
+    "anyFutureDate": "Any future date"
   },
   "general": {
     "appName": "shoplifter.",
+    "payAmountStripe": "Pay ${{price}} with Stripe",
+    "payStripe": "Pay with Stripe",
     "wishlist": "Wishlist",
     "account": "Account",
     "saleOffers": "Sale & Offers",
@@ -28,7 +37,9 @@
     "orderSummary": "Order Summary",
     "subtotal": "Subtotal",
     "couponCode": "Coupon Code",
+    "shippingType": "Shipping Type",
     "shippingCost": "Shipping Cost",
+    "setShipping": "Choose shipping option",
     "estimatedTotal": "Estimated Total",
     "proceedToCheckout": "Proceed to checkout",
     "continueShopping": "Continue Shopping",
@@ -74,7 +85,7 @@
   },
   "checkout": {
     "shippingInfo": "Shipping information",
-    "paymentMethod": "Payment method",
+    "paymentMethod": "Payment",
     "orderReview": "Order review"
   },
   "shippingForm": {
@@ -91,6 +102,10 @@
   "shippingOptions": {
     "quick": "Quick Shipping",
     "insured": "Insured Shipping"
+  },
+  "review": {
+    "paymentSuccessful": "Payment Successful",
+    "thankYou": "Thank you for ordering from shoplifter!"
   },
   "inlineErrors": {
     "email": "Invalid email format",

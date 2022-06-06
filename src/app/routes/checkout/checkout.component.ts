@@ -43,6 +43,9 @@ export class CheckoutComponent implements OnInit {
     const routeTab = this.activatedRoute.snapshot.params['tab'];
     if (!routeTab) this.location.go(`/checkout/${this.tabs[0].route}`);
     this.activeTab = this.tabs.findIndex((tab) => tab.route === routeTab);
+    this.tabs.forEach((tab) =>
+      tab.id < this.activeTab ? (tab.finished = true) : (tab.finished = false)
+    );
   }
 
   saveShipping(shippingPrice: number) {

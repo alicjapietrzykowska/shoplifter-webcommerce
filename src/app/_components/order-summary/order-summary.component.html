@@ -8,9 +8,11 @@
       <div>{{ "cart.subtotal" | translate }}</div>
       <div>{{ cartTotal | currency }}</div>
     </div>
-    <div class="summary-row">
+    <div class="summary-row" *ngIf="readonly">
       <div>{{ "cart.shippingCost" | translate }}</div>
-      <div>{{ (shipping | currency) || "-" }}</div>
+      <div>
+        {{ (shipping | currency) || "cart.setShipping" | translate }}
+      </div>
     </div>
     <div class="summary-row">
       <div>{{ "cart.couponCode" | translate }}</div>
@@ -21,7 +23,9 @@
         (ngModelChange)="checkDiscount()"
         [placeholder]="'demo.coupon' | translate"
       />
-      <div>{{ discount?.code || "common.none" | translate }}</div>
+      <div *ngIf="readonly">
+        {{ discount?.code || "common.none" | translate }}
+      </div>
     </div>
     <div class="discount" *ngIf="discount">
       <div>

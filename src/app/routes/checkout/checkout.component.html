@@ -44,8 +44,12 @@
           (submit)="changeTab(tab)"
         ></app-shipping-form>
       </div>
-      <div *ngIf="tab.id === 1">Płatność!</div>
-      <div *ngIf="tab.id === 2">Podsumowanie!</div>
+      <div *ngIf="tab.id === 1">
+        <app-payment (confirmPayment)="changeTab(tab)"></app-payment>
+      </div>
+      <div *ngIf="tab.id === 2">
+        <app-review></app-review>
+      </div>
     </div>
   </div>
 </ng-template>

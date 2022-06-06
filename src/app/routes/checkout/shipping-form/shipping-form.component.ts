@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { shippingOptions } from 'assets/static/shipping.static';
 import { CartService } from '@services/cart.service';
+import { LocalStorageService } from '@services/localStorage.service';
 
 @Component({
   selector: 'app-shipping-form',
@@ -29,10 +30,11 @@ export class ShippingFormComponent implements OnInit {
   });
   constructor(
     private formBuilder: FormBuilder,
-    private cartService: CartService
+    private localStorageService: LocalStorageService
   ) {}
 
   saveForm() {
+    this.localStorageService.add('shipping', this.shippingForm.value);
     this.submit.emit();
   }
 
@@ -43,6 +45,10 @@ export class ShippingFormComponent implements OnInit {
   }
 
   ngOnInit() {
+    const localShippingAddress = this.localStorageService.get('shipping');
+    if (localShippingAddress) {
+      this.shippingForm.patchValue(localShippingAddress);
+    }
     this.manageShipping();
   }
 }

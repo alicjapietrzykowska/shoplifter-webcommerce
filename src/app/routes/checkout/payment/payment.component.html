@@ -1,74 +1,21 @@
-<div *ngIf="address">
-  <h3>{{ "checkout.shippingInfo" | translate }}</h3>
-  <div class="shipping-wrapper">
-    <div class="shipping-info">
-      <div class="shipping-info__row">
-        <div>{{ "shippingForm.fullName" | translate }}</div>
-        <div>{{ address.fullName }}</div>
-      </div>
-      <div class="shipping-info__row">
-        <div>{{ "shippingForm.company" | translate }}</div>
-        <div>{{ address.company || "-" }}</div>
-      </div>
-      <div class="shipping-info__row">
-        <div>{{ "shippingForm.email" | translate }}</div>
-        <div>{{ address.email }}</div>
-      </div>
-      <div class="shipping-info__row">
-        <div>{{ "shippingForm.phone" | translate }}</div>
-        <div>{{ address.phone }}</div>
-      </div>
-      <div class="shipping-info__row">
-        <div>{{ "shippingForm.country" | translate }}</div>
-        <div>{{ address.country }}</div>
-      </div>
-      <div class="shipping-info__row">
-        <div>{{ "shippingForm.address" | translate }}</div>
-        <div>{{ address.address }}</div>
-      </div>
-      <div class="shipping-info__row">
-        <div>{{ "shippingForm.city" | translate }}</div>
-        <div>{{ address.city }}</div>
-      </div>
-      <div class="shipping-info__row">
-        <div>{{ "shippingForm.zipCode" | translate }}</div>
-        <div>{{ address.zipCode }}</div>
-      </div>
-    </div>
-    <div class="shipping-info">
-      <div class="shipping-info__row">
-        <div>{{ "cart.shippingType" | translate }}</div>
-        <div>{{ shippingType.name | translate }}</div>
-      </div>
-      <div class="shipping-info__row">
-        <div>{{ "cart.shippingCost" | translate }}</div>
-        <div>{{ shippingType.price | currency }}</div>
-      </div>
-    </div>
-  </div>
-  <div class="payment">
-    <button
-      (click)="checkout(totalWithDiscount)"
-      mat-flat-button
-      color="primary"
-    >
-      {{ "general.payAmountStripe" | translate: { price: totalWithDiscount } }}
-    </button>
-    <h3>{{ "demo.testCardData" | translate }}</h3>
+<div class="payment">
+  <h3>{{ "general.payAmount" | translate: { price: totalWithDiscount } }}</h3>
+  <ngx-paypal [config]="payPalConfig"></ngx-paypal>
 
-    <div class="shipping-info">
-      <div class="shipping-info__row">
-        <div>{{ "demo.cardNumber" | translate }}</div>
-        <div>4242424242424242</div>
-      </div>
-      <div class="shipping-info__row">
-        <div>{{ "demo.date" | translate }}</div>
-        <div>{{ "demo.anyFutureDate" | translate }}</div>
-      </div>
-      <div class="shipping-info__row">
-        <div>{{ "demo.cvv" | translate }}</div>
-        <div>{{ "demo.any3Digits" | translate }}</div>
-      </div>
+  <h3>{{ "demo.testCardData" | translate }}</h3>
+
+  <div class="payment-info">
+    <div class="payment-info__row">
+      <div>{{ "demo.cardNumber" | translate }}</div>
+      <div>4999992222222229</div>
+    </div>
+    <div class="payment-info__row">
+      <div>{{ "demo.date" | translate }}</div>
+      <div>{{ "demo.anyFutureDate" | translate }}</div>
+    </div>
+    <div class="payment-info__row">
+      <div>{{ "demo.cvv" | translate }}</div>
+      <div>{{ "demo.any3Digits" | translate }}</div>
     </div>
   </div>
 </div>

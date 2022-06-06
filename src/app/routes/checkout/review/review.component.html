@@ -1,6 +1,53 @@
 <div class="review">
   <h2>{{ "review.paymentSuccessful" | translate }}</h2>
   <h3>{{ "review.thankYou" | translate }}</h3>
+  <h3 class="shipping-header">{{ "checkout.shippingInfo" | translate }}</h3>
+  <div class="shipping-wrapper">
+    <div class="shipping-info">
+      <div class="shipping-info__row">
+        <div>{{ "shippingForm.fullName" | translate }}</div>
+        <div>{{ address.fullName }}</div>
+      </div>
+      <div class="shipping-info__row">
+        <div>{{ "shippingForm.company" | translate }}</div>
+        <div>{{ address.company || "-" }}</div>
+      </div>
+      <div class="shipping-info__row">
+        <div>{{ "shippingForm.email" | translate }}</div>
+        <div>{{ address.email }}</div>
+      </div>
+      <div class="shipping-info__row">
+        <div>{{ "shippingForm.phone" | translate }}</div>
+        <div>{{ address.phone }}</div>
+      </div>
+      <div class="shipping-info__row">
+        <div>{{ "shippingForm.country" | translate }}</div>
+        <div>{{ address.country }}</div>
+      </div>
+      <div class="shipping-info__row">
+        <div>{{ "shippingForm.address" | translate }}</div>
+        <div>{{ address.address }}</div>
+      </div>
+      <div class="shipping-info__row">
+        <div>{{ "shippingForm.city" | translate }}</div>
+        <div>{{ address.city }}</div>
+      </div>
+      <div class="shipping-info__row">
+        <div>{{ "shippingForm.zipCode" | translate }}</div>
+        <div>{{ address.zipCode }}</div>
+      </div>
+    </div>
+    <div class="shipping-info">
+      <div class="shipping-info__row">
+        <div>{{ "cart.shippingType" | translate }}</div>
+        <div>{{ shippingType.name | translate }}</div>
+      </div>
+      <div class="shipping-info__row">
+        <div>{{ "cart.shippingCost" | translate }}</div>
+        <div>{{ shippingType.price | currency }}</div>
+      </div>
+    </div>
+  </div>
   <p>
     Here it should say that we will send you your order soon, but unfortunately
     it is just a fake store.
@@ -15,8 +62,9 @@
     I am currently looking for a job as a Front End Developer, mainly with Vue.
   </p>
   <p>Thank you for taking the time to do this demo and may I see you again!</p>
-
-  <button [routerLink]="['/']" mat-flat-button color="primary">
-    {{ "common.backToMain" | translate }}
-  </button>
+  <div class="button-wrapper">
+    <button [routerLink]="['/']" mat-flat-button color="primary">
+      {{ "common.backToMain" | translate }}
+    </button>
+  </div>
 </div>

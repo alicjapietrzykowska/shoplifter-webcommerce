@@ -1,19 +1,46 @@
-h3 {
-  font-size: 1.2rem;
-  font-weight: bold;
+.review {
+  padding-bottom: 2rem;
+}
+h2 {
+  margin: 2rem 0;
+  font-size: 2rem;
+  color: var(--primary);
   text-align: center;
-  margin-bottom: 2rem;
 }
 
-.payment-wrapper {
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+
+  &.shipping-header {
+    text-align: left;
+  }
+}
+
+a {
+  color: var(--primary);
+}
+
+p {
+  text-align: center;
+}
+
+button {
+  margin: 2rem auto;
+}
+
+.shipping-wrapper {
   display: flex;
+  width: 100%;
+  margin-bottom: 2rem;
 
   & div:first-child {
     margin-right: 2rem;
   }
 }
 
-.payment-info {
+.shipping-info {
   flex: 1;
   &__row {
     display: flex;
@@ -34,20 +61,7 @@ h3 {
   }
 }
 
-.payment {
-  padding: 2rem;
+.button-wrapper {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  min-width: 500px;
-
-  ngx-paypal {
-    min-width: 500px;
-    margin-bottom: 2rem;
-  }
-
-  .payment-info {
-    min-width: 400px;
-  }
 }

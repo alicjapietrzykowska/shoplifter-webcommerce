@@ -19,8 +19,7 @@
   },
   "general": {
     "appName": "shoplifter.",
-    "payAmountStripe": "Pay ${{price}} with Stripe",
-    "payStripe": "Pay with Stripe",
+    "payAmount": "Pay ${{price}} with PayPal",
     "wishlist": "Wishlist",
     "account": "Account",
     "saleOffers": "Sale & Offers",

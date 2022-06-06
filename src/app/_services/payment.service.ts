@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '@env';
-import { TranslateService } from '@ngx-translate/core';
+import { ICreateOrderRequest, IPayPalConfig } from 'ngx-paypal';
 import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
@@ -9,7 +9,7 @@ export class PaymentService {
   strikeCheckout: any = null;
   private _paymentStatus: BehaviorSubject<boolean>;
 
-  constructor(private translate: TranslateService) {
+  constructor() {
     this._paymentStatus = new BehaviorSubject<boolean>(false);
   }
 
@@ -25,38 +25,51 @@ export class PaymentService {
     return this._paymentStatus.asObservable();
   }
 
-  checkout(amount: number) {
+  initConfig(amount: string): IPayPalConfig {
     const t = this;
-    const checkout = (<any>window).StripeCheckout.configure({
-      key: environment.stripeKey,
-      locale: 'auto',
-      token: function (stripeToken: any) {
+    const payPalConfig = {
+      currency: 'USD',
+      clientId: environment.paypalClientId,
+      createOrderOnClient: () =>
+        <ICreateOrderRequest>{
+          intent: 'CAPTURE',
+          purchase_units: [
+            {
+              amount: {
+                currency_code: 'USD',
+                value: amount,
+                breakdown: {
+                  item_total: {
+                    currency_code: 'USD',
+                    value: amount,
+                  },
+                },
+              },
+              items: [
+                {
+                  name: 'Enterprise Subscription',
+                  quantity: '1',
+                  category: 'DIGITAL_GOODS',
+                  unit_amount: {
+                    currency_code: 'USD',
+                    value: amount,
+                  },
+                },
+              ],
+            },
+          ],
+        },
+      advanced: {
+        commit: 'true',
+      },
+      style: {
+        label: 'paypal',
+        layout: 'vertical',
+      },
+      onClientAuthorization: () => {
         t.paymentStatus = true;
       },
-    });
-
-    checkout.open({
-      name: this.translate.instant('general.appName'),
-      description: this.translate.instant('general.payStripe'),
-      amount: amount * 100,
-    });
-  }
-
-  stripePaymentGateway() {
-    if (!window.document.getElementById('stripe-script')) {
-      const scr = window.document.createElement('script');
-      scr.id = 'stripe-script';
-      scr.type = 'text/javascript';
-      scr.src = 'https://checkout.stripe.com/checkout.js';
-
-      scr.onload = () => {
-        this.strikeCheckout = (<any>window).StripeCheckout.configure({
-          key: environment.stripeKey,
-          locale: 'auto',
-        });
-      };
-
-      window.document.body.appendChild(scr);
-    }
+    };
+    return payPalConfig as IPayPalConfig;
   }
 }

@@ -6,8 +6,8 @@ export const environment = {
   production: false,
   APIUrl: 'https://fakestoreapi.com',
   storagePrefix: 'SLL',
-  stripeKey:
-    'pk_test_51L7g6VLMjvHPj08VXbtk2NNAqaPBOjWyPmHhVfQOjKgMj271LUe1q6J0PDNrkPOEV7JQygzB8GCoIOCZ4rUU141o00DpIUspcr',
+  paypalClientId:
+    'AaWoxvyIt3QE7T4ij8gT9fRTCMJk_H1HaeUc28bR6Dujty9t4b2F2IX1Z61L-SIjq3rw7-TNWz4iUL1_',
 };
 
 /*

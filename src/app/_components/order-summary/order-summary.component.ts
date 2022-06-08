@@ -6,6 +6,7 @@ import { discountCodes } from 'assets/static/discounts.static';
 import { LocalStorageService } from '@services/localStorage.service';
 import { Discount } from '@interfaces/discountDto';
 import { shippingOptions } from 'assets/static/shipping.static';
+import { Shipping } from '@interfaces/shippingDto';
 
 @Component({
   selector: 'app-order-summary',
@@ -22,7 +23,7 @@ export class OrderSummaryComponent implements OnInit, OnDestroy {
   cart: Product[] = [];
   discountCoupon = '';
   discount!: Discount | undefined;
-  shippingType: any = {};
+  shippingType!: Shipping;
 
   private cartSubscription$: Subscription | undefined;
   constructor(

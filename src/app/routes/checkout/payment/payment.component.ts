@@ -4,11 +4,13 @@ import {
   Output,
   EventEmitter,
   OnDestroy,
+  AfterContentInit,
 } from '@angular/core';
 import { PaymentService } from '@services/payment.service';
 import { Subscription } from 'rxjs';
 import { CartService } from '@services/cart.service';
 import { IPayPalConfig } from 'ngx-paypal';
+import { LoaderService } from '@services/loader.service';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -16,7 +18,6 @@ import { IPayPalConfig } from 'ngx-paypal';
 })
 export class PaymentComponent implements OnInit, OnDestroy {
   @Output() confirmPayment = new EventEmitter();
-  strikeCheckout: any = null;
   totalWithDiscount = '0';
   public payPalConfig?: IPayPalConfig;
 
@@ -31,8 +32,14 @@ export class PaymentComponent implements OnInit, OnDestroy {
     this.totalWithDiscount = this.cartService
       .getCartTotalWithDiscount()
       .toFixed(2);
-    this.payPalConfig = this.paymentService.initConfig(this.totalWithDiscount);
 
+    //Timeout to avoid problems with rendering Paypal buttons
+    //error: Document is ready and element #ngx-captcha-id-NUMBER does not exist
+    setTimeout(() => {
+      this.payPalConfig = this.paymentService.initConfig(
+        this.totalWithDiscount
+      );
+    }, 500);
     this.cartSubscription$ = this.cartService.cart$.subscribe((cart) => {
       this.totalWithDiscount = this.cartService
         .getCartTotalWithDiscount()
@@ -45,6 +52,7 @@ export class PaymentComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.manageCart();
+
     this.paymentService.paymentStatus$.subscribe((res) => {
       if (res) {
         this.confirmPayment.emit();

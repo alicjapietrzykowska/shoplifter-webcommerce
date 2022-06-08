@@ -17,7 +17,6 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { AmountComponent } from '@components/amount/amount.component';
 import { OrderSummaryComponent } from '@components/order-summary/order-summary.component';
 import { InlineErrorsComponent } from '@components/inlineErrors/inlineErrors.component';
-import { NgxPayPalModule } from 'ngx-paypal';
 
 @NgModule({
   imports: [
@@ -28,7 +27,6 @@ import { NgxPayPalModule } from 'ngx-paypal';
     NgxDatatableModule,
     TranslateModule,
     RouterModule,
-    NgxPayPalModule,
   ],
   exports: [
     CommonModule,
@@ -47,7 +45,6 @@ import { NgxPayPalModule } from 'ngx-paypal';
     AmountComponent,
     OrderSummaryComponent,
     InlineErrorsComponent,
-    NgxPayPalModule,
   ],
   declarations: [
     HeaderComponent,

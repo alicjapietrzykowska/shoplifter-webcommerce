@@ -6,7 +6,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class PaymentService {
-  strikeCheckout: any = null;
   private _paymentStatus: BehaviorSubject<boolean>;
 
   constructor() {
@@ -38,24 +37,7 @@ export class PaymentService {
               amount: {
                 currency_code: 'USD',
                 value: amount,
-                breakdown: {
-                  item_total: {
-                    currency_code: 'USD',
-                    value: amount,
-                  },
-                },
               },
-              items: [
-                {
-                  name: 'Enterprise Subscription',
-                  quantity: '1',
-                  category: 'DIGITAL_GOODS',
-                  unit_amount: {
-                    currency_code: 'USD',
-                    value: amount,
-                  },
-                },
-              ],
             },
           ],
         },

@@ -45,7 +45,10 @@
         ></app-shipping-form>
       </div>
       <div *ngIf="tab.id === 1">
-        <app-payment (confirmPayment)="changeTab(tab)"></app-payment>
+        <app-payment
+          *ngIf="tab.id === 1 && activeTab === 1"
+          (confirmPayment)="changeTab(tab)"
+        ></app-payment>
       </div>
       <div *ngIf="tab.id === 2">
         <app-review></app-review>

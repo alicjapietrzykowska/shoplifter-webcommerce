@@ -2,7 +2,7 @@
   <h2>{{ "review.paymentSuccessful" | translate }}</h2>
   <h3>{{ "review.thankYou" | translate }}</h3>
   <h3 class="shipping-header">{{ "checkout.shippingInfo" | translate }}</h3>
-  <div class="shipping-wrapper">
+  <div class="shipping-wrapper" *ngIf="address && shippingType">
     <div class="shipping-info">
       <div class="shipping-info__row">
         <div>{{ "shippingForm.fullName" | translate }}</div>

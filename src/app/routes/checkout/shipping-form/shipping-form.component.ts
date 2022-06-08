@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { shippingOptions } from 'assets/static/shipping.static';
-import { CartService } from '@services/cart.service';
 import { LocalStorageService } from '@services/localStorage.service';
+import { ShippingForm } from '@interfaces/shippingFormDto';
 
 @Component({
   selector: 'app-shipping-form',
@@ -33,8 +33,8 @@ export class ShippingFormComponent implements OnInit {
     private localStorageService: LocalStorageService
   ) {}
 
-  saveForm() {
-    this.localStorageService.add('shipping', this.shippingForm.value);
+  saveForm(shippingForm: ShippingForm) {
+    this.localStorageService.add('shipping', shippingForm);
     this.submit.emit();
   }
 

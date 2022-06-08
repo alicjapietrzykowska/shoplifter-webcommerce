@@ -6,6 +6,7 @@ import { CheckoutComponent } from './checkout.component';
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ReviewComponent } from './review/review.component';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 const routes: Routes = [
   {
@@ -19,7 +20,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [CommonModule, SharedModule, RouterModule.forChild(routes)],
+  imports: [
+    CommonModule,
+    SharedModule,
+    RouterModule.forChild(routes),
+    NgxPayPalModule,
+  ],
   declarations: [
     CheckoutComponent,
     ShippingFormComponent,

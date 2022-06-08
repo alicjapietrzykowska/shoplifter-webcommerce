@@ -61,3 +61,37 @@ button {
     border-bottom: 1px solid var(--border-color);
   }
 }
+
+.mat-tab-label {
+  flex: 1;
+  border: 1px solid var(--border-color);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #000;
+  height: 70px !important;
+  opacity: unset !important;
+
+  .mat-icon {
+    margin-right: 0.3rem;
+    margin-left: -0.3rem;
+    font-size: 1.31rem;
+    height: unset;
+  }
+
+  &.mat-tab-disabled {
+    color: #000;
+  }
+
+  &:not(:last-of-type) {
+    border-right: 0;
+  }
+}
+
+.mat-form-field-wrapper {
+  padding-bottom: 0rem;
+}
+
+.mat-divider {
+  margin: 1rem 0 0.5rem !important;
+}

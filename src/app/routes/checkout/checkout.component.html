@@ -1,39 +1,58 @@
 <h2>
-  <div class="container">
-    {{ "general.yourCart" | translate }}
+  <div class="">
+    {{ "general.checkout" | translate }}
   </div>
 </h2>
-<div class="container">
-  <div class="products">
-    <div class="product-table" *ngIf="cart.length">
-      <ngx-datatable [rows]="rows" [columns]="columns">
-        <ng-container *ngFor="let column of columns">
-          <ngx-datatable-column
-            name="{{ column.name }}"
-            prop="{{ column.prop }}"
-            *ngIf="column.prop === 'amount'"
-          >
-            <ng-template
-              let-value="value"
-              let-row="row"
-              ngx-datatable-cell-template
-            >
-              <app-amount [product]="row"></app-amount>
-            </ng-template>
-          </ngx-datatable-column>
-          <ngx-datatable-column
-            *ngIf="column.prop !== 'amount'"
-            name="{{ column.name }}"
-            prop="{{ column.prop }}"
-          >
-          </ngx-datatable-column>
-        </ng-container>
-      </ngx-datatable>
-    </div>
-    <div class="order-subtotal">
-      <div>{{ "cart.subtotal" | translate }}</div>
-      <div>{{ cartTotal | currency }}</div>
+<div class="content-wrapper">
+  <div class="checkout-wrapper">
+    <mat-tab-group [selectedIndex]="activeTab">
+      <mat-tab label="form" disabled *ngFor="let tab of tabs">
+        <ng-template mat-tab-label>
+          <mat-icon color="primary" *ngIf="tab.finished" class="tab-icon">
+            check_circle
+          </mat-icon>
+          <mat-icon color="primary" *ngIf="!tab.finished" class="tab-icon">
+            check_circle_outline
+          </mat-icon>
+          {{ tab.title }}
+        </ng-template>
+        <ng-container
+          [ngTemplateOutlet]="tabContentTemplate"
+          [ngTemplateOutletContext]="{ $implicit: tab }"
+        ></ng-container>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+  <app-order-summary
+    [readonly]="true"
+    [shipping]="shippingPrice"
+  ></app-order-summary>
+</div>
+
+<ng-template #tabContentTemplate let-tab>
+  <div class="tab">
+    <div class="container">
+      <div class="tab-header">
+        <h3>
+          <span>{{ tab.id + 1 }}/{{ tabs.length }}</span> {{ tab.title }}
+        </h3>
+      </div>
+      <div *ngIf="tab.id === 0">
+        <app-shipping-form
+          (saveShipping)="saveShipping($event)"
+          (submit)="changeTab(tab)"
+        ></app-shipping-form>
+      </div>
+      <div *ngIf="tab.id === 1">
+        <app-payment
+          *ngIf="tab.id === 1 && activeTab === 1"
+          (confirmPayment)="changeTab(tab)"
+        ></app-payment>
+      </div>
+      <div *ngIf="tab.id === 2">
+        <app-review></app-review>
+      </div>
     </div>
   </div>
-  <app-order-summary></app-order-summary>
-</div>
+</ng-template>

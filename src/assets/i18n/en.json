@@ -3,13 +3,23 @@
     "items": "items",
     "ok": "Ok",
     "cancel": "Cancel",
-    "areYouSure": "Are you sure?"
+    "areYouSure": "Are you sure?",
+    "none": "None",
+    "nextStep": "Next step",
+    "backToMain": "Go back to main page"
   },
   "demo": {
-    "coupon": "10OFF or 50OFF"
+    "coupon": "10OFF or 50OFF",
+    "testCardData": "Dummy Card Data (for demo purposes)",
+    "cardNumber": "Card number",
+    "cvv": "CVV",
+    "any3Digits": "Any 3 digit number",
+    "date": "Date",
+    "anyFutureDate": "Any future date"
   },
   "general": {
     "appName": "shoplifter.",
+    "payAmount": "Pay ${{price}} with PayPal",
     "wishlist": "Wishlist",
     "account": "Account",
     "saleOffers": "Sale & Offers",
@@ -26,6 +36,9 @@
     "orderSummary": "Order Summary",
     "subtotal": "Subtotal",
     "couponCode": "Coupon Code",
+    "shippingType": "Shipping Type",
+    "shippingCost": "Shipping Cost",
+    "setShipping": "Choose shipping option",
     "estimatedTotal": "Estimated Total",
     "proceedToCheckout": "Proceed to checkout",
     "continueShopping": "Continue Shopping",
@@ -68,5 +81,36 @@
     "footerMenu": "Shoplifter shop",
     "socialMedia": "Follow us",
     "theme": "Shoplifter by Poka Poka Themes © 2015. All Rights Reserved"
+  },
+  "checkout": {
+    "shippingInfo": "Shipping information",
+    "paymentMethod": "Payment",
+    "orderReview": "Order review"
+  },
+  "shippingForm": {
+    "fullName": "Full name",
+    "company": "Company",
+    "email": "E-mail",
+    "phone": "Phone",
+    "country": "Country",
+    "address": "Address",
+    "city": "City",
+    "zipCode": "ZIP Code",
+    "shipping": "Shipping Options"
+  },
+  "shippingOptions": {
+    "quick": "Quick Shipping",
+    "insured": "Insured Shipping"
+  },
+  "review": {
+    "paymentSuccessful": "Payment Successful",
+    "thankYou": "Thank you for ordering from shoplifter!"
+  },
+  "inlineErrors": {
+    "email": "Invalid email format",
+    "required": "Field required",
+    "phone": "Invalid phone format",
+    "maxlength": "The maximum number of characters has been exceeded",
+    "minlength": "The minimum number of characters is not provided"
   }
 }

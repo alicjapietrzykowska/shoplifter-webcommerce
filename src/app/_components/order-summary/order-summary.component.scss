@@ -2,6 +2,7 @@
   border: 1px solid var(--border-color);
   padding: 1.5rem;
   margin-bottom: 2rem;
+  min-width: 350px;
 
   h3 {
     border-bottom: 1px solid var(--border-color);
@@ -26,7 +27,7 @@
 
   .discount {
     margin-bottom: 1rem;
-    color: var(--primary);
+    color: var(--accent);
     display: flex;
     justify-content: space-between;
     align-items: center;

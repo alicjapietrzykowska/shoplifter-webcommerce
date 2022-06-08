@@ -1,7 +1,13 @@
+.content-wrapper {
+  display: flex;
+  padding: 0 10rem;
+}
+
 .container {
   margin: 0 auto;
   width: 100%;
   display: flex;
+  flex-direction: column;
 }
 
 h2 {
@@ -12,21 +18,33 @@ h2 {
   align-items: center;
   font-weight: 500;
   border-bottom: 1px solid var(--border-color);
+  padding: 0 10rem;
 }
 
-.products {
+.tab {
+  border: 1px solid var(--border-color);
+  border-top: 0;
+}
+
+.tab-header {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+h3 {
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  margin: 0;
+  span {
+    color: var(--primary);
+  }
+}
+
+.checkout-wrapper {
   flex: 1;
   margin-right: 2rem;
-
-  .order-subtotal {
-    height: 70px;
-    background: #f4f4f4;
-    border: 1px solid var(--border-color);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    font-size: 1.125rem;
-    padding: 0 2rem;
-  }
 }

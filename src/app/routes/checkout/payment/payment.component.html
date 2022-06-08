@@ -1,0 +1,21 @@
+<div class="payment">
+  <h3>{{ "general.payAmount" | translate: { price: totalWithDiscount } }}</h3>
+  <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+
+  <h3>{{ "demo.testCardData" | translate }}</h3>
+
+  <div class="payment-info">
+    <div class="payment-info__row">
+      <div>{{ "demo.cardNumber" | translate }}</div>
+      <div>4999992222222229</div>
+    </div>
+    <div class="payment-info__row">
+      <div>{{ "demo.date" | translate }}</div>
+      <div>{{ "demo.anyFutureDate" | translate }}</div>
+    </div>
+    <div class="payment-info__row">
+      <div>{{ "demo.cvv" | translate }}</div>
+      <div>{{ "demo.any3Digits" | translate }}</div>
+    </div>
+  </div>
+</div>

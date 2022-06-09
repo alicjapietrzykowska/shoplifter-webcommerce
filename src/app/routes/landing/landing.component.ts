@@ -1,8 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Product } from '@interfaces/productDto';
 import { ProductsService } from '@services/products.service';
-import { OwlOptions } from 'ngx-owl-carousel-o';
-import { TranslateService } from '@ngx-translate/core';
 import { adsData } from 'assets/static/ads.static';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -17,38 +15,8 @@ export class LandingComponent implements OnInit, OnDestroy {
   allAds = adsData;
   private productsSubscription$: Subscription | undefined;
 
-  customOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: false,
-    navSpeed: 700,
-    autoplay: true,
-    autoplayTimeout: 4000,
-    autoplayHoverPause: true,
-    autoplaySpeed: 1000,
-    navText: ['<', '>'],
-    responsive: {
-      0: {
-        items: 1,
-      },
-      400: {
-        items: 2,
-      },
-      740: {
-        items: 4,
-      },
-      940: {
-        items: 4,
-      },
-    },
-    nav: false,
-  };
-
   constructor(
     private productService: ProductsService,
-    private translate: TranslateService,
     private router: Router
   ) {}
 

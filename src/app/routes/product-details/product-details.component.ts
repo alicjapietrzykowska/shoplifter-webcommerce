@@ -48,7 +48,6 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
         this.wishlistService.manageProduct(this.product);
         this.cartService.manageProduct(this.product);
         this.getProductsInCategory();
-        console.log({ res });
       });
   }
 

@@ -1,7 +1,8 @@
 .product {
   display: flex;
   border: 1px solid var(--border-color);
-  padding: 2rem;
+  border-bottom: 0;
+  padding: 2rem 2rem 0;
 
   & > div {
     flex: 1;
@@ -92,5 +93,17 @@
         }
       }
     }
+  }
+}
+
+.similar-products {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 2rem;
+  h3 {
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.85rem 0;
+    margin-bottom: 1rem;
   }
 }

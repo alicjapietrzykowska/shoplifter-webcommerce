@@ -29,7 +29,8 @@
     "bestSellers": "Best Sellers from the last week",
     "home": "Home",
     "contact": "Contact",
-    "cart": "Cart"
+    "cart": "Cart",
+    "youMayAlsoLike": "You may also like"
   },
   "cart": {
     "orderSubtotal": "Order Subtotal",

@@ -1,0 +1,61 @@
+<div class="product" *ngIf="product">
+  <div class="product__image">
+    <img [src]="product.image" [alt]="product.title" />
+  </div>
+  <div class="product__info">
+    <div class="id">{{ "products.no" | translate }} {{ product.id }}</div>
+    <h2>{{ product.title }}</h2>
+    <div class="price">{{ product.price | currency }}</div>
+    <div class="description">{{ product.description }}</div>
+
+    <div class="buttons-wrapper">
+      <button
+        *ngIf="!product.isInCart"
+        (click)="addToCart()"
+        mat-flat-button
+        color="primary"
+      >
+        <mat-icon>shopping_cart</mat-icon>
+        {{ "products.addToCart" | translate }}
+      </button>
+      <button
+        *ngIf="product.isInCart"
+        (click)="removeFromCart()"
+        mat-flat-button
+        color="primary"
+      >
+        <mat-icon>remove_shopping_cart</mat-icon>
+        {{ "products.removeFromCart" | translate }}
+      </button>
+      <button
+        *ngIf="!product.isFavorite"
+        (click)="addToWishlist()"
+        mat-stroked-button
+        color="primary"
+      >
+        <mat-icon>favorite</mat-icon>
+        {{ "products.addToWishlist" | translate }}
+      </button>
+      <button
+        *ngIf="product.isFavorite"
+        (click)="removeFromWishlist()"
+        mat-stroked-button
+        color="primary"
+      >
+        <mat-icon>favorite_border</mat-icon>
+        {{ "products.removeFromWishlist" | translate }}
+      </button>
+    </div>
+    <div class="returns-info">
+      <h3>{{ "products.returnsAndExchanges" | translate }}</h3>
+      <div class="description">
+        {{ "products.returnsDescription" | translate }}
+      </div>
+      <ul>
+        <li>{{ "products.14DaysToReturn" | translate }}</li>
+        <li>{{ "products.returnsFromUs" | translate }}</li>
+        <li>{{ "products.allElements" | translate }}</li>
+      </ul>
+    </div>
+  </div>
+</div>

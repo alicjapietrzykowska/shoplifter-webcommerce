@@ -1,9 +1,12 @@
 <div
   *ngIf="product"
   class="product"
-  [ngClass]="{ 'product--hovered': isHovered }"
-  (mouseover)="isHovered = true"
-  (mouseleave)="isHovered = false"
+  [ngClass]="{
+    'product--hovered': isHovered,
+    'category-product': disableHovered
+  }"
+  (mouseover)="!disableHovered && (isHovered = true)"
+  (mouseleave)="!disableHovered && (isHovered = false)"
 >
   <div (click)="goToProductDetails()">
     <div class="product__image">
@@ -13,7 +16,7 @@
     <h2>{{ product.title }}</h2>
     <div class="price">{{ product.price | currency }}</div>
   </div>
-  <div class="add-buttons" *ngIf="isHovered">
+  <div class="add-buttons" *ngIf="disableHovered || isHovered">
     <button
       *ngIf="!product.isFavorite"
       (click)="addToWishlist()"

@@ -15,6 +15,7 @@ export class CategoryComponent implements OnInit, OnDestroy {
   products: Product[] = [];
   categoryName: string;
   private wishlistSubscription$: Subscription | undefined;
+  private productsSubscription$: Subscription | undefined;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -43,6 +44,15 @@ export class CategoryComponent implements OnInit, OnDestroy {
     );
   }
 
+  manageAllProducts() {
+    this.products = [...this.productService.allProducts];
+    this.productsSubscription$ = this.productService.allProducts$.subscribe(
+      (res) => {
+        this.products = res;
+      }
+    );
+  }
+
   ngOnInit() {
     //TODO: remove 'Sale & Offers'
     if (
@@ -50,7 +60,7 @@ export class CategoryComponent implements OnInit, OnDestroy {
       this.categoryName === this.translate.instant('general.saleOffers') ||
       this.categoryName === 'Sale & Offers'
     ) {
-      this.products = [...this.productService.allProducts];
+      this.manageAllProducts();
     } else if (this.categoryName === 'wishlist') {
       this.manageWishList();
     } else {
@@ -60,5 +70,6 @@ export class CategoryComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     if (this.wishlistSubscription$) this.wishlistSubscription$.unsubscribe();
+    if (this.productsSubscription$) this.productsSubscription$.unsubscribe();
   }
 }

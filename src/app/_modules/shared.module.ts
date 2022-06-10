@@ -17,6 +17,8 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { AmountComponent } from '@components/amount/amount.component';
 import { OrderSummaryComponent } from '@components/order-summary/order-summary.component';
 import { InlineErrorsComponent } from '@components/inlineErrors/inlineErrors.component';
+import { ProductCarouselComponent } from '@components/products-carousel/products-carousel.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   imports: [
@@ -27,6 +29,7 @@ import { InlineErrorsComponent } from '@components/inlineErrors/inlineErrors.com
     NgxDatatableModule,
     TranslateModule,
     RouterModule,
+    CarouselModule,
   ],
   exports: [
     CommonModule,
@@ -45,6 +48,8 @@ import { InlineErrorsComponent } from '@components/inlineErrors/inlineErrors.com
     AmountComponent,
     OrderSummaryComponent,
     InlineErrorsComponent,
+    ProductCarouselComponent,
+    CarouselModule,
   ],
   declarations: [
     HeaderComponent,
@@ -58,6 +63,7 @@ import { InlineErrorsComponent } from '@components/inlineErrors/inlineErrors.com
     AmountComponent,
     OrderSummaryComponent,
     InlineErrorsComponent,
+    ProductCarouselComponent,
   ],
   entryComponents: [ConfirmModalComponent],
   providers: [ConfirmDialogService],

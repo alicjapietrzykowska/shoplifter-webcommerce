@@ -29,7 +29,8 @@
     "bestSellers": "Best Sellers from the last week",
     "home": "Home",
     "contact": "Contact",
-    "cart": "Cart"
+    "cart": "Cart",
+    "youMayAlsoLike": "You may also like"
   },
   "cart": {
     "orderSubtotal": "Order Subtotal",
@@ -58,7 +59,12 @@
     "removeFromWishlist": "Remove from Wishlist",
     "collections": "Collections",
     "confirmDeleteFromCart": "Do you want to remove this product from the cart?",
-    "no": "Product No. "
+    "no": "Product No. ",
+    "returnsAndExchanges": "Returns and exchanges",
+    "returnsDescription": "There are a few important things to keep in mind when returning a product you purchased. You can return unwanted items by post within 7 working days of receipt of your goods.",
+    "14DaysToReturn": "You have 14 calendar days to return an item from the date you received it.",
+    "returnsFromUs": "Only items that have been purchased directly from Us.",
+    "allElements": "Please ensure that the item you are returning is repackaged with all elements."
   },
   "ads": {
     "actionButton": "Check this out"

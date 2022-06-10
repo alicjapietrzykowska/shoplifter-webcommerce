@@ -48,6 +48,9 @@ export class ProductsService {
   }
 
   getProductDetails(id: number): Observable<Product> {
-    return this.http.get<Product>(`${environment.APIUrl}/products/${id}`);
+    this.loaderService.isLoading = true;
+    return this.http
+      .get<Product>(`${environment.APIUrl}/products/${id}`)
+      .pipe(finalize(() => (this.loaderService.isLoading = false)));
   }
 }

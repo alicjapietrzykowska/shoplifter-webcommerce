@@ -12,7 +12,6 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LandingComponent } from '@routes/landing/landing.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { CarouselModule } from 'ngx-owl-carousel-o';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -36,7 +35,6 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
-    CarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

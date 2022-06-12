@@ -1,0 +1,19 @@
+.sorting {
+  position: absolute;
+  right: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.rotate {
+  transform: rotate(180deg) scaleX(-1);
+}
+
+mat-select-trigger {
+  display: flex;
+  align-items: center;
+
+  .mat-icon {
+    margin-right: 1rem;
+  }
+}

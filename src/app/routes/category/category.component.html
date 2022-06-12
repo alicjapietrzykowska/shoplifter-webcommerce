@@ -1,4 +1,7 @@
-<h2>{{ categoryName }}</h2>
+<div class="category-heading">
+  <h2>{{ categoryName }}</h2>
+  <app-sorting (sort)="sort($event)"></app-sorting>
+</div>
 <div class="category-list">
   <app-product-overview
     *ngFor="let product of products"

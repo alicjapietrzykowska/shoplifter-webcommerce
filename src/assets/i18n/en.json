@@ -66,6 +66,13 @@
     "returnsFromUs": "Only items that have been purchased directly from Us.",
     "allElements": "Please ensure that the item you are returning is repackaged with all elements."
   },
+  "sorting": {
+    "sortBy": "Sort by",
+    "name": "Name",
+    "price": "Price",
+    "ASC": "Ascending",
+    "DESC": "Descending"
+  },
   "ads": {
     "actionButton": "Check this out"
   },

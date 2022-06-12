@@ -1,0 +1,25 @@
+<div class="sorting">
+  <mat-form-field appearance="outline">
+    <mat-label>{{ "sorting.sortBy" | translate }}</mat-label>
+    <mat-select [formControl]="sortingControl">
+      <mat-select-trigger>
+        <ng-container
+          *ngIf="chosenSorting"
+          [ngTemplateOutlet]="optionTemplate"
+          [ngTemplateOutletContext]="{ $implicit: chosenSorting }"
+        ></ng-container>
+      </mat-select-trigger>
+      <mat-option *ngFor="let option of sortingOptions" [value]="option.value">
+        <ng-container
+          [ngTemplateOutlet]="optionTemplate"
+          [ngTemplateOutletContext]="{ $implicit: option }"
+        ></ng-container>
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<ng-template #optionTemplate let-option>
+  <mat-icon [ngClass]="{ rotate: option.order === 'ASC' }">sort</mat-icon>
+  {{ option.label }} {{ "sorting." + option.order | translate }}
+</ng-template>

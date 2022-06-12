@@ -5,6 +5,8 @@ import { ProductsService } from '@services/products.service';
 import { take, Subscription } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { WishlistService } from '@services/wishlist.service';
+import { Sorting } from '@interfaces/sortingDto';
+import { SortingService } from '@services/sorting.service';
 
 @Component({
   selector: 'app-category',
@@ -15,14 +17,20 @@ export class CategoryComponent implements OnInit, OnDestroy {
   products: Product[] = [];
   categoryName: string;
   private wishlistSubscription$: Subscription | undefined;
+  private productsSubscription$: Subscription | undefined;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private productService: ProductsService,
     private wishlistService: WishlistService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private sortingService: SortingService
   ) {
     this.categoryName = this.activatedRoute.snapshot.queryParams['category'];
+  }
+
+  sort(sorting: Sorting) {
+    this.products = this.sortingService.sort(sorting, this.products);
   }
 
   getProductsInCategory() {
@@ -43,6 +51,15 @@ export class CategoryComponent implements OnInit, OnDestroy {
     );
   }
 
+  manageAllProducts() {
+    this.products = [...this.productService.allProducts];
+    this.productsSubscription$ = this.productService.allProducts$.subscribe(
+      (res) => {
+        this.products = res;
+      }
+    );
+  }
+
   ngOnInit() {
     //TODO: remove 'Sale & Offers'
     if (
@@ -50,7 +67,7 @@ export class CategoryComponent implements OnInit, OnDestroy {
       this.categoryName === this.translate.instant('general.saleOffers') ||
       this.categoryName === 'Sale & Offers'
     ) {
-      this.products = [...this.productService.allProducts];
+      this.manageAllProducts();
     } else if (this.categoryName === 'wishlist') {
       this.manageWishList();
     } else {
@@ -60,5 +77,6 @@ export class CategoryComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     if (this.wishlistSubscription$) this.wishlistSubscription$.unsubscribe();
+    if (this.productsSubscription$) this.productsSubscription$.unsubscribe();
   }
 }

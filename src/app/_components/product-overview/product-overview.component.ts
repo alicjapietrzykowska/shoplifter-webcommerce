@@ -15,6 +15,7 @@ import { Subscription } from 'rxjs';
 })
 export class ProductOverviewComponent implements OnInit, OnDestroy {
   @Input() product!: Product;
+  @Input() disableHovered = false;
   isHovered = false;
   private removeSubscription$: Subscription | undefined;
 

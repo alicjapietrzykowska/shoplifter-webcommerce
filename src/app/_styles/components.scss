@@ -95,3 +95,7 @@ button {
 .mat-divider {
   margin: 1rem 0 0.5rem !important;
 }
+
+.mat-form-field-type-mat-select .mat-form-field-underline {
+  bottom: unset !important;
+}

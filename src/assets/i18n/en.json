@@ -30,7 +30,10 @@
     "home": "Home",
     "contact": "Contact",
     "cart": "Cart",
-    "youMayAlsoLike": "You may also like"
+    "youMayAlsoLike": "You may also like",
+    "500pageMessage": "Oops! We have some problems!",
+    "500pageText": "Sorry, it looks like the Fake Store API is having some problems. Refresh the page or try again later.",
+    "empty": "There's nothing there yet!"
   },
   "cart": {
     "orderSubtotal": "Order Subtotal",

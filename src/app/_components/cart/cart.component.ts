@@ -1,4 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import { CartService } from '@services/cart.service';
 import { Product } from '@interfaces/productDto';
 import { Subscription } from 'rxjs';
@@ -9,11 +15,17 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit, OnDestroy {
+  @Output() close: EventEmitter<any> = new EventEmitter();
+
   products: Product[] = [];
   cartTotal = 0;
   private cartSubscription$: Subscription | undefined;
 
   constructor(private cartService: CartService) {}
+
+  closeCart() {
+    this.close.emit();
+  }
 
   manageCart() {
     this.products = [...this.cartService.cart];

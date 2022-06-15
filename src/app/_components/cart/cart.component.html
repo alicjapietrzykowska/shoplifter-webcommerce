@@ -18,6 +18,7 @@
     mat-flat-button
     [disabled]="!products.length"
     color="primary"
+    (click)="closeCart()"
   >
     {{ "general.checkout" | translate }}
   </button>

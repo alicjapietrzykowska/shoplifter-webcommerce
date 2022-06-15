@@ -1,0 +1,142 @@
+{
+  "common": {
+    "items": "items",
+    "ok": "Ok",
+    "cancel": "Cancel",
+    "areYouSure": "Are you sure?",
+    "none": "None",
+    "nextStep": "Next step",
+    "backToMain": "Go back to main page",
+    "submit": "Submit"
+  },
+  "demo": {
+    "coupon": "10OFF or 50OFF",
+    "testCardData": "Dummy Card Data (for demo purposes)",
+    "cardNumber": "Card number",
+    "cvv": "CVV",
+    "any3Digits": "Any 3 digit number",
+    "date": "Date",
+    "anyFutureDate": "Any future date"
+  },
+  "general": {
+    "appName": "shoplifter.",
+    "payAmount": "Pay ${{price}} with PayPal",
+    "wishlist": "Wishlist",
+    "account": "Account",
+    "saleOffers": "Sale & Offers",
+    "yourCart": "Your Cart",
+    "checkout": "Checkout",
+    "totalCart": "Total cart",
+    "bestSellers": "Best Sellers from the last week",
+    "home": "Home",
+    "contact": "Contact",
+    "cart": "Cart",
+    "youMayAlsoLike": "You may also like",
+    "500pageMessage": "Oops! We have some problems!",
+    "500pageText": "Sorry, it looks like the Fake Store API is having some problems. Refresh the page or try again later.",
+    "empty": "There's nothing there yet!"
+  },
+  "cart": {
+    "orderSubtotal": "Order Subtotal",
+    "orderSummary": "Order Summary",
+    "subtotal": "Subtotal",
+    "couponCode": "Coupon Code",
+    "shippingType": "Shipping Type",
+    "shippingCost": "Shipping Cost",
+    "setShipping": "Choose shipping option",
+    "estimatedTotal": "Estimated Total",
+    "proceedToCheckout": "Proceed to checkout",
+    "continueShopping": "Continue Shopping",
+    "product": "Product",
+    "category": "Category",
+    "price": "Price",
+    "amount": "Amount",
+    "discount": "A code for a {{discount}}% discount has been applied.",
+    "removeProduct": "Remove product",
+    "removeDiscount": "Remove discount"
+  },
+  "products": {
+    "addToCart": "Add to Cart",
+    "removeFromCart": "Remove from Cart",
+    "emptyCart": "Your cart is empty. Add something to your cart to view it here.",
+    "addToWishlist": "Add to Wishlist",
+    "removeFromWishlist": "Remove from Wishlist",
+    "collections": "Collections",
+    "confirmDeleteFromCart": "Do you want to remove this product from the cart?",
+    "no": "Product No. ",
+    "returnsAndExchanges": "Returns and exchanges",
+    "returnsDescription": "There are a few important things to keep in mind when returning a product you purchased. You can return unwanted items by post within 7 working days of receipt of your goods.",
+    "14DaysToReturn": "You have 14 calendar days to return an item from the date you received it.",
+    "returnsFromUs": "Only items that have been purchased directly from Us.",
+    "allElements": "Please ensure that the item you are returning is repackaged with all elements."
+  },
+  "sorting": {
+    "sortBy": "Sort by",
+    "name": "Name",
+    "price": "Price",
+    "ASC": "Ascending",
+    "DESC": "Descending"
+  },
+  "ads": {
+    "actionButton": "Check this out"
+  },
+  "socialMedia": {
+    "followUs": "Follow us on",
+    "twitter": "Twitter",
+    "checkInspirations": "Check inspirations on",
+    "instagram": "Instagram",
+    "likeUsOn": "Like us on",
+    "facebook": "Facebook",
+    "checkOurBoard": "Check our board on",
+    "pinterest": "Pinterest",
+    "newsletter": "Newsletter",
+    "newsletterDesc": "If you would like to receive the very latest updates on Shoplifter, new collections, behind-the-scenes image sand interviews, please click subscribe.",
+    "subscribe": "Subscribe"
+  },
+  "footer": {
+    "payment": "Pay the way you want",
+    "footerMenu": "Shoplifter shop",
+    "socialMedia": "Follow us",
+    "theme": "Shoplifter by Poka Poka Themes © 2015. All Rights Reserved. ",
+    "themeUsage": "Use of the theme by Alicja Łukaszewska 2022"
+  },
+  "checkout": {
+    "shippingInfo": "Shipping information",
+    "paymentMethod": "Payment",
+    "orderReview": "Order review"
+  },
+  "shippingForm": {
+    "fullName": "Full name",
+    "company": "Company",
+    "email": "E-mail",
+    "phone": "Phone",
+    "country": "Country",
+    "address": "Address",
+    "city": "City",
+    "zipCode": "ZIP Code",
+    "shipping": "Shipping Options"
+  },
+  "shippingOptions": {
+    "quick": "Quick Shipping",
+    "insured": "Insured Shipping"
+  },
+  "review": {
+    "paymentSuccessful": "Payment Successful",
+    "thankYou": "Thank you for ordering from shoplifter!"
+  },
+  "inlineErrors": {
+    "email": "Invalid email format",
+    "required": "Field required",
+    "phone": "Invalid phone format",
+    "maxlength": "The maximum number of characters has been exceeded",
+    "minlength": "The minimum number of characters is not provided"
+  },
+  "contactForm": {
+    "email": "E-mail",
+    "yourMessage": "Your message"
+  },
+  "newsLetterForm": {
+    "title": "Thank you for trying to join newsletter",
+    "description": "But it's just a fake store, so there won't be any emails ;)"
+  }
+}

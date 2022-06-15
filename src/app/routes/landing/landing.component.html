@@ -59,12 +59,36 @@
       <img src="assets/images/envelope.png" />
       <h2>{{ "socialMedia.newsletter" | translate }}</h2>
       <h5>{{ "socialMedia.newsletterDesc" | translate }}</h5>
-      <div class="input-wrapper">
-        <input type="text" />
-        <button mat-flat-button color="primary">
+      <form
+        [formGroup]="newsletterForm"
+        class="input-wrapper"
+        (submit)="subscribe()"
+      >
+        <input
+          type="text"
+          formControlName="email"
+          [placeholder]="'contactForm.email' | translate"
+          autocomplete="email"
+        />
+        <button
+          [disabled]="newsletterForm.invalid"
+          mat-flat-button
+          color="primary"
+        >
           {{ "socialMedia.subscribe" | translate }}
         </button>
-      </div>
+      </form>
+      <app-inline-errors
+        [form]="newsletterForm"
+        controlName="email"
+      ></app-inline-errors>
     </div>
   </div>
 </div>
+
+<ng-template #newsletterTemplate>
+  <div class="newsletter-modal">
+    <h2>{{ "newsLetterForm.title" | translate }}</h2>
+    <div>{{ "newsLetterForm.description" | translate }}</div>
+  </div>
+</ng-template>

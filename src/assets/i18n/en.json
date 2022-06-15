@@ -6,7 +6,8 @@
     "areYouSure": "Are you sure?",
     "none": "None",
     "nextStep": "Next step",
-    "backToMain": "Go back to main page"
+    "backToMain": "Go back to main page",
+    "submit": "Submit"
   },
   "demo": {
     "coupon": "10OFF or 50OFF",
@@ -30,7 +31,10 @@
     "home": "Home",
     "contact": "Contact",
     "cart": "Cart",
-    "youMayAlsoLike": "You may also like"
+    "youMayAlsoLike": "You may also like",
+    "500pageMessage": "Oops! We have some problems!",
+    "500pageText": "Sorry, it looks like the Fake Store API is having some problems. Refresh the page or try again later.",
+    "empty": "There's nothing there yet!"
   },
   "cart": {
     "orderSubtotal": "Order Subtotal",
@@ -93,7 +97,8 @@
     "payment": "Pay the way you want",
     "footerMenu": "Shoplifter shop",
     "socialMedia": "Follow us",
-    "theme": "Shoplifter by Poka Poka Themes © 2015. All Rights Reserved"
+    "theme": "Shoplifter by Poka Poka Themes © 2015. All Rights Reserved. ",
+    "themeUsage": "Use of the theme by Alicja Łukaszewska 2022"
   },
   "checkout": {
     "shippingInfo": "Shipping information",
@@ -125,5 +130,13 @@
     "phone": "Invalid phone format",
     "maxlength": "The maximum number of characters has been exceeded",
     "minlength": "The minimum number of characters is not provided"
+  },
+  "contactForm": {
+    "email": "E-mail",
+    "yourMessage": "Your message"
+  },
+  "newsLetterForm": {
+    "title": "Thank you for trying to join newsletter",
+    "description": "But it's just a fake store, so there won't be any emails ;)"
   }
 }

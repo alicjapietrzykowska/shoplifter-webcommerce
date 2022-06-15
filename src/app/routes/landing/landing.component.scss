@@ -221,7 +221,26 @@
 
       button {
         padding: 0 1rem;
+
+        &:disabled {
+          opacity: 0.8;
+          cursor: default;
+          background-color: var(--primary);
+          color: white;
+        }
       }
     }
+
+    app-inline-errors {
+      margin-top: 1rem;
+    }
+  }
+}
+
+.newsletter-modal {
+  text-align: center;
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
   }
 }

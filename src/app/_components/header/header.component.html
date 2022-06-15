@@ -20,7 +20,11 @@
             {{ cartTotal | currency }}
           </span>
         </button>
-        <app-cart *ngIf="showCart" class="cart-wrapper"></app-cart>
+        <app-cart
+          *ngIf="showCart"
+          (close)="showCart = false"
+          class="cart-wrapper"
+        ></app-cart>
       </div>
     </div>
   </div>

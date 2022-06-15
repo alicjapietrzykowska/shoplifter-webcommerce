@@ -1,6 +1,6 @@
 <div class="cart">
   <h2>{{ "general.yourCart" | translate }}</h2>
-  <div class="product-list">
+  <div class="product-list scroll">
     <app-cart-product
       *ngFor="let product of products"
       [product]="product"
@@ -18,6 +18,7 @@
     mat-flat-button
     [disabled]="!products.length"
     color="primary"
+    (click)="closeCart()"
   >
     {{ "general.checkout" | translate }}
   </button>

@@ -1,0 +1,84 @@
+<h2>{{ "general.contact" | translate }}</h2>
+<div class="contact">
+  <div class="contact-info">
+    <h3>Hi! I'm Alicja Łukaszewska!</h3>
+    <p>I am a Front End Developer working mostly with Vue 3 and Angular 2+!</p>
+    <p>
+      If you want to contact me please use the form on the right or write to
+      <a href="mailto:alicja.x.lukaszewska@gmail.com">
+        alicja.x.lukaszewska@gmail.com </a
+      >.
+    </p>
+    <p>Thanks for stopping by!</p>
+    <ul>
+      <!-- TODO: add CV -->
+      <!-- <li>
+        <a class="cv" href="files/CV.pdf" download="CV - Alicja Łukaszewska.pdf"
+          >Download CV</a
+        >
+      </li> -->
+      <li>
+        <a
+          class="github"
+          target="_blank"
+          href="https://github.com/alicjalukaszewska"
+          >GitHub</a
+        >
+      </li>
+      <li>
+        <a
+          class="linkedin"
+          href="https://www.linkedin.com/in/alicja-łukaszewska/"
+          target="_blank"
+          >LinkedIn</a
+        >
+      </li>
+    </ul>
+  </div>
+  <div class="contact-form">
+    <form
+      [formGroup]="contactForm"
+      action="https://formspree.io/f/xnqwryqy"
+      method="POST"
+    >
+      <mat-form-field appearance="outline">
+        <mat-label>{{ "contactForm.email" | translate }}</mat-label>
+        <input
+          required
+          autocomplete="email"
+          matInput
+          type="email"
+          name="email"
+          formControlName="email"
+        />
+      </mat-form-field>
+      <app-inline-errors
+        [form]="contactForm"
+        controlName="email"
+      ></app-inline-errors>
+      <mat-form-field appearance="outline">
+        <mat-label>{{ "contactForm.yourMessage" | translate }}</mat-label>
+        <textarea
+          required
+          matInput
+          rows="5"
+          type="text"
+          name="messsage"
+          formControlName="message"
+        ></textarea>
+      </mat-form-field>
+      <app-inline-errors
+        [form]="contactForm"
+        controlName="message"
+      ></app-inline-errors>
+      <button
+        [disabled]="contactForm.invalid"
+        mat-flat-button
+        type="submit"
+        color="primary"
+      >
+        {{ "common.submit" | translate }}
+      </button>
+    </form>
+  </div>
+</div>

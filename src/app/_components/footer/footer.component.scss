@@ -6,6 +6,7 @@ footer {
   align-items: baseline;
   height: $footer-height;
   padding-top: 70px;
+  border-top: 1px solid var(--border-color);
 
   & > div {
     text-align: center;

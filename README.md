@@ -1,5 +1,7 @@
 # Shoplifter
 A fake eCommerce website, created using Angular 13. 
+
+## [DEMO](https://alicjalukaszewska.github.io/shoplifter-webcommerce/)
 ## Preview images: 
 ![Preview image 1](./files/1.png)
 ![Preview image 2](./files/2.png)

@@ -98,11 +98,23 @@
 
 .similar-products {
   padding-bottom: 2rem;
+  position: relative;
   h3 {
     text-transform: uppercase;
     text-align: center;
     border-bottom: 1px solid var(--border-color);
     padding: 0.85rem 0;
     margin-bottom: 1rem;
+  }
+
+  & > div {
+    display: flex;
+    justify-content: space-around;
+  }
+  app-product-overview {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
   }
 }

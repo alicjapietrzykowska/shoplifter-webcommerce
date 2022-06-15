@@ -98,7 +98,7 @@
     "footerMenu": "Shoplifter shop",
     "socialMedia": "Follow us",
     "theme": "Shoplifter by Poka Poka Themes © 2015. All Rights Reserved. ",
-    "themeUsage": "Use of the theme by Alicja Lukaszewska 2022"
+    "themeUsage": "Use of the theme by Alicja Łukaszewska 2022"
   },
   "checkout": {
     "shippingInfo": "Shipping information",
@@ -134,5 +134,9 @@
   "contactForm": {
     "email": "E-mail",
     "yourMessage": "Your message"
+  },
+  "newsLetterForm": {
+    "title": "Thank you for trying to join newsletter",
+    "description": "But it's just a fake store, so there won't be any emails ;)"
   }
 }

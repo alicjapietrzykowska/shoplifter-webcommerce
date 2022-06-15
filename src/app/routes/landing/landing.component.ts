@@ -1,9 +1,17 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ViewChild,
+  TemplateRef,
+} from '@angular/core';
 import { Product } from '@interfaces/productDto';
 import { ProductsService } from '@services/products.service';
 import { adsData } from 'assets/static/ads.static';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-landing',
@@ -15,15 +23,29 @@ export class LandingComponent implements OnInit, OnDestroy {
   allAds = adsData;
   private productsSubscription$: Subscription | undefined;
 
+  newsletterForm: FormGroup = this.formBuilder.group({
+    email: [
+      '',
+      [Validators.required, Validators.email, Validators.maxLength(50)],
+    ],
+  });
+  @ViewChild('newsletterTemplate') dialogTemplate!: TemplateRef<any>;
+
   constructor(
     private productService: ProductsService,
-    private router: Router
+    private router: Router,
+    private formBuilder: FormBuilder,
+    public dialog: MatDialog
   ) {}
 
   redirect(category: string) {
     this.router.navigate([`product-list`], {
       queryParams: { category },
     });
+  }
+
+  subscribe() {
+    this.dialog.open(this.dialogTemplate);
   }
 
   ngOnInit(): void {

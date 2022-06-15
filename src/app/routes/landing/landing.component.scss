@@ -3,20 +3,20 @@
 .landing {
   overflow: hidden;
 }
-.ads-wrapper {
+.fake-ads-wrapper {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(6, 1fr);
   height: 900px;
 
-  .ad {
+  .fake-ad {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
 
-    .ad-info {
+    .fake-ad-info {
       position: absolute;
       text-align: center;
       z-index: 100;
@@ -31,7 +31,6 @@
     img {
       object-fit: contain;
       max-height: 100%;
-      // display: none;
     }
 
     .action-button {
@@ -52,7 +51,7 @@
       justify-content: center;
       align-items: flex-end;
 
-      .ad-info {
+      .fake-ad-info {
         left: 50%;
         transform: translate(-50%);
         top: 15%;
@@ -69,7 +68,7 @@
       color: white;
       grid-area: 1 / 6 / 4 / 13;
 
-      .ad-info {
+      .fake-ad-info {
         max-width: 40%;
         left: 50%;
         top: 30%;
@@ -84,7 +83,7 @@
       background-color: black;
       color: white;
       justify-content: flex-start;
-      .ad-info {
+      .fake-ad-info {
         left: 50%;
         top: 20%;
       }
@@ -98,7 +97,7 @@
     &-4 {
       grid-area: 4 / 6 / 7 / 13;
       justify-content: flex-end;
-      .ad-info {
+      .fake-ad-info {
         left: 10%;
         top: 30%;
       }

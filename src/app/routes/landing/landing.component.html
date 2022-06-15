@@ -1,12 +1,12 @@
 <div class="landing">
-  <div class="ads-wrapper">
+  <div class="fake-ads-wrapper">
     <div
-      class="ad"
+      class="fake-ad"
       *ngFor="let ad of allAds; let index = index"
-      [ngClass]="'ad-' + (index + 1)"
+      [ngClass]="'fake-ad-' + (index + 1)"
       (click)="redirect(ad.category)"
     >
-      <div class="ad-info">
+      <div class="fake-ad-info">
         <h3>{{ ad.title }}</h3>
         <button mat-button class="action-button">
           {{ "ads.actionButton" | translate }}

@@ -1,11 +1,10 @@
 # Shoplifter
-A fake eCommerce website, created using Angular 13. Based on 
+A fake eCommerce website, created using Angular 13. 
 ## Preview images: 
 ![Preview image 1](./files/1.png)
 ![Preview image 2](./files/2.png)
 ![Preview image 3](./files/3.png)
 ![Preview image 4](./files/4.png)
-
 
 ## Technologies used:
 - Angular 13

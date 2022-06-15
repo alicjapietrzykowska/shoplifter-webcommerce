@@ -16,7 +16,7 @@ import { WishlistService } from '@services/wishlist.service';
 })
 export class ProductDetailsComponent implements OnInit, OnDestroy {
   product!: Product;
-  productsInCategory!: Product[];
+  similarProducts!: Product[];
   private removeSubscription$: Subscription | undefined;
 
   constructor(
@@ -29,12 +29,18 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   ) {}
 
   getProductsInCategory() {
-    this.productService
-      .getProductsInCategory(this.product.category)
-      .pipe(take(1))
-      .subscribe((res: Product[]) => {
-        this.productsInCategory = res;
-      });
+    function getFourSimilarProducts(arr: Product[]) {
+      const shuffled = [...arr].sort(() => 0.5 - Math.random());
+
+      return shuffled.slice(0, 4);
+    }
+
+    const productsWithCategory = this.productService.allProducts.filter(
+      (product) =>
+        product.category === this.product.category &&
+        product.id !== this.product.id
+    );
+    this.similarProducts = getFourSimilarProducts(productsWithCategory);
   }
 
   getProductDetails() {

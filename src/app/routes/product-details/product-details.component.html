@@ -59,7 +59,12 @@
     </div>
   </div>
 </div>
-<div *ngIf="productsInCategory?.length" class="similar-products">
+<div *ngIf="similarProducts?.length" class="similar-products">
   <h3>{{ "general.youMayAlsoLike" | translate }}</h3>
-  <app-product-carousel [products]="productsInCategory"></app-product-carousel>
+  <div>
+    <app-product-overview
+      *ngFor="let product of similarProducts"
+      [product]="product"
+    ></app-product-overview>
+  </div>
 </div>

@@ -6,7 +6,12 @@
 <div class="container">
   <div class="products">
     <div class="product-table" *ngIf="cart.length">
-      <ngx-datatable [rows]="rows" rowHeight="auto" [columnMode]="'force'">
+      <ngx-datatable
+        [rows]="rows"
+        [columnMode]="'force'"
+        [rowHeight]="'auto'"
+        [scrollbarH]="true"
+      >
         <ng-container *ngFor="let column of columns">
           <ngx-datatable-column
             name="{{ column.name }}"

@@ -23,3 +23,20 @@ ul {
 h4 {
   text-transform: uppercase;
 }
+
+a {
+  color: var(--primary);
+
+  &:hover {
+    color: var(--primary-dark);
+  }
+}
+
+.scroll::-webkit-scrollbar {
+  width: 7px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--border-color);
+}

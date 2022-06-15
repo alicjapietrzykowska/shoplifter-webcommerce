@@ -1,0 +1,29 @@
+<h2>{{ "general.contact" | translate }}</h2>
+<div class="contact">
+  <div class="contact-info">
+    <h3>Hi! I'm Alicja Łukaszewska!</h3>
+    <p>I am a Front End Developer working mostly with Vue 3 and Angular 2+!</p>
+    <p>
+      If you want to contact me use the form on the right or write to
+      <a href="mailto:alicja.x.lukaszewska@gmail.com">
+        alicja.x.lukaszewska@gmail.com </a
+      >.
+    </p>
+    <p>Thanks for stopping by!</p>
+  </div>
+  <div class="contact-form">
+    <form action="https://formspree.io/f/xnqwryqy" method="POST">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ "contactForm.email" | translate }}</mat-label>
+        <input matInput type="email" name="email" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>{{ "contactForm.yourMessage" | translate }}</mat-label>
+        <textarea matInput rows="5" type="text" name="message"></textarea>
+      </mat-form-field>
+      <button mat-flat-button type="submit" color="primary">
+        {{ "common.submit" | translate }}
+      </button>
+    </form>
+  </div>
+</div>

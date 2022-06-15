@@ -6,7 +6,8 @@
     "areYouSure": "Are you sure?",
     "none": "None",
     "nextStep": "Next step",
-    "backToMain": "Go back to main page"
+    "backToMain": "Go back to main page",
+    "submit": "Submit"
   },
   "demo": {
     "coupon": "10OFF or 50OFF",
@@ -96,7 +97,8 @@
     "payment": "Pay the way you want",
     "footerMenu": "Shoplifter shop",
     "socialMedia": "Follow us",
-    "theme": "Shoplifter by Poka Poka Themes © 2015. All Rights Reserved"
+    "theme": "Shoplifter by Poka Poka Themes © 2015. All Rights Reserved. ",
+    "themeUsage": "Use of the theme by Alicja Lukaszewska 2022"
   },
   "checkout": {
     "shippingInfo": "Shipping information",
@@ -128,5 +130,9 @@
     "phone": "Invalid phone format",
     "maxlength": "The maximum number of characters has been exceeded",
     "minlength": "The minimum number of characters is not provided"
+  },
+  "contactForm": {
+    "email": "E-mail",
+    "yourMessage": "Your message"
   }
 }

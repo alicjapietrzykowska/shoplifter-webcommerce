@@ -16,6 +16,7 @@ import { SortingService } from '@services/sorting.service';
 export class CategoryComponent implements OnInit, OnDestroy {
   products: Product[] = [];
   categoryName: string;
+  salesCategoryName = this.translate.instant('general.saleOffers');
   private wishlistSubscription$: Subscription | undefined;
   private productsSubscription$: Subscription | undefined;
 
@@ -61,12 +62,7 @@ export class CategoryComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    //TODO: remove 'Sale & Offers'
-    if (
-      !this.categoryName ||
-      this.categoryName === this.translate.instant('general.saleOffers') ||
-      this.categoryName === 'Sale & Offers'
-    ) {
+    if (!this.categoryName || this.categoryName === this.salesCategoryName) {
       this.manageAllProducts();
     } else if (this.categoryName === 'wishlist') {
       this.manageWishList();
